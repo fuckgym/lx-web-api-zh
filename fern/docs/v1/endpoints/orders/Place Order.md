@@ -2,10 +2,10 @@
 
 连接到 IServer 经纪会话后,此端点允许您提交订单。
 
-CP WEB API 支持多种高级订单类型(orderTypes),更多详情和示例请参阅[订单类型(Order Types)](/general/order-types/)页面。
+CP WEB API 支持多种高级订单类型(orderTypes),更多详情和示例请参阅[订单类型(Order Types)](https://ibkrcampus.com/general/order-types/)页面。
 
 **Cash Quantity(现金数量):**通过指定 cashQty 而非 quantity,以货币金额方式发送订单,例如 cashQty: 200。端点 /iserver/contract/rules 会在 cqtTypes 中返回有效的订单类型列表。\
-注意:更多详情请参阅 [Web API 中的现金数量订单](/web-api/v1/endpoints/orders/cash-quantity-orders-in-the-web-api)。
+注意:更多详情请参阅 [Web API 中的现金数量订单](/v1/endpoints/orders/cash-quantity-orders-in-the-web-api)。
 
 **Currency Conversion(货币转换):**通过包含 isCcyConv = true,将现金从一种货币转换为另一种货币。如需指定现金数量,请使用 fxQTY 而非 quantity,例如 fxQTY: 100。
 
@@ -127,7 +127,7 @@ curl \
 
 **order\_status:** String。\
 返回当前市价订单的订单状态。\
-更多信息请参阅[订单状态值(Order Status Value)](/web-api/v1/endpoints/order-monitoring/order-status-value)。
+更多信息请参阅[订单状态值(Order Status Value)](/v1/endpoints/order-monitoring/order-status-value)。
 
 **encrypt\_message:** String。\
 返回 "1",表示所发送的消息已被加密。
@@ -146,9 +146,9 @@ curl \
 
 在某些情况下,您会收到一个 ID 以及一条关于您订单的消息。
 
-有关处理该确认的更多细节,请参阅[下单回复(Place Order Reply)](/web-api/v1/endpoints/orders/place-order-reply-confirmation)部分。
+有关处理该确认的更多细节,请参阅[下单回复(Place Order Reply)](/v1/endpoints/orders/place-order-reply-confirmation)部分。
 
-希望避免接收 /reply 消息的用户,可以考虑使用 [Suppression(消息抑制)](/web-api/v1/endpoints/orders/suppress-messages)端点来自动接受这些消息。
+希望避免接收 /reply 消息的用户,可以考虑使用 [Suppression(消息抑制)](/v1/endpoints/orders/suppress-messages)端点来自动接受这些消息。
 
 **重要:**在发送任何后续订单之前,必须先确认该回复。否则,订单将失效,而尝试确认无效回复将导致超时(503)。
 

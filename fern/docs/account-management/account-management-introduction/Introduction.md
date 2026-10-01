@@ -37,7 +37,7 @@ Interactive Brokers (IBKR) 账户管理 API 面向希望定制 IBKR 注册系统
 
 ## 受众
 
-本服务仅面向在 FATF(金融行动特别工作组)成员国注册的顾问/经纪商,且需通过申请开通。有关如何开始使用的说明,请参见[设置流程(Setup Process)](/web-api/account-management/account-management-introduction/setup-process)。
+本服务仅面向在 FATF(金融行动特别工作组)成员国注册的顾问/经纪商,且需通过申请开通。有关如何开始使用的说明,请参见[设置流程(Setup Process)](/account-management/account-management-introduction/setup-process)。
 
 ## 连接性(Connectivity)
 

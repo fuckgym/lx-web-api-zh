@@ -6,7 +6,7 @@
 * accounts
 * users
 
-本节包含客户注册的对象与属性信息、验证规则以及支持的枚举值。基于账户类型的客户申请必填字段列表可在[此处](/web-api/account-management/client-registration/data-for-client-registration)找到。
+本节包含客户注册的对象与属性信息、验证规则以及支持的枚举值。基于账户类型的客户申请必填字段列表可在[此处](/account-management/client-registration/data-for-client-registration)找到。
 
 ### 枚举（Enumerations）
 

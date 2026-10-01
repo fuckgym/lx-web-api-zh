@@ -10,7 +10,7 @@
 
 ## 添加 Open Banking 指令
 
-使用[单点登录](/web-api/account-management/single-sign-on)将用户连接到 IBKR 门户,以便在其账户中添加新的 Open Banking 指令。
+使用[单点登录](/account-management/single-sign-on)将用户连接到 IBKR 门户,以便在其账户中添加新的 Open Banking 指令。
 
 plaintext
 

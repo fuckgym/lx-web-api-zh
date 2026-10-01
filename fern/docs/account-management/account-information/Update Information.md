@@ -18,7 +18,7 @@ MIFIR 数据涉及在欧洲经济区(EEA)和英国境内运营的投资公司的
 | -------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | accountId      | 字符串                                                                     | 所提交请求对应的顾问/经纪商客户账户的 IBKR 账户 ID。                                                                                                           |
 | title          | ACCOUNT HOLDER FIRST HOLDER SECOND HOLDER                                  | 个人账户类型的 title 始终为 "ACCOUNT HOLDER"。联合账户类型的 title 为以下之一:FIRST HOLDER SECOND HOLDER |
-| identification | [Identification](/web-api/account-management/schema/associated-individual) | XML 请求中包含的 `identification` 节点应与开户请求中包含的 `identification` 节点一致。                                                        |
+| identification | [Identification](/account-management/schema/associatedindividual) | XML 请求中包含的 `identification` 节点应与开户请求中包含的 `identification` 节点一致。                                                        |
 
 ## 示例
 
@@ -66,7 +66,7 @@ PATCH /gw/api/v1/accounts
 | translation             |                                                                                                     |                                                                                                                                                                                                                                                                           |
 | id                      | 字符串                                                                                              | **`id`** 是 IBKR 为与账户关联的每个个人分配的唯一 ID。**`id`** 可用作 `externalId` 的替代。可通过调用 `GET /api/v1/accounts/{{accountId}}/details` 获取 **`id`**。                         |
 | externalId              | 字符串                                                                                              | 与该个人关联的 `externalId`,与该用户相关联。`externalId` 可从账户创建响应文件的 \<Entities> 部分获取。如果一个账户上有多个个人,每个个人都将拥有唯一的 `externalId`。 |
-| newAccountHolderDetails | 对象数组([AssociatedIndividual](/web-api/account-management/schema/associated-individual)) | 在 `newAccountHolderDetails` 节点中提供要更新的申请人数据。                                                                                                                                                                                          |
+| newAccountHolderDetails | 对象数组([AssociatedIndividual](/account-management/schema/associatedindividual)) | 在 `newAccountHolderDetails` 节点中提供要更新的申请人数据。                                                                                                                                                                                          |
 
 ## 示例
 
@@ -285,8 +285,8 @@ PATCH /gw/api/v1/accounts
 | accountId                                                 | 字符串                                                                                                                                                                                                                                                       | 所提交请求对应的顾问/经纪商客户账户的 IBKR 账户 ID。                                                                                                                                                                                                                                                                     |
 | externalId                                                | 字符串                                                                                                                                                                                                                                                       | 与该个人关联的 `externalId`。                                                                                                                                                                                                                                                                                                                   |
 | entityId                                                  | 字符串                                                                                                                                                                                                                                                       | 与该个人关联的唯一 ID。该 ID 可从 [create](https://www.interactivebrokers.com/campus/ibkr-api-page/webapi-ref-staging/#tag/Account-Management-Accounts/paths/~1gw~1api~1v1~1accounts/post) 响应文件的 \<Entities> 部分获取。如果一个账户上有多个个人,每个个人都将拥有唯一的 id。 |
-| \<TaxForm>                                                | [w8Ben](/web-api/account-management/schema/associated-individual#w8ben)(非美国)  [localTaxForms](/web-api/account-management/schema/associated-individual#localtaxforms) 或  [w9](/web-api/account-management/schema/associated-individual#w9)(美国客户) | 输入新的税务表格详细信息。本部分的验证规则与客户注册时包含税务表格所适用的验证规则相同。                                                                                                                                                                                                                                                                              |
-| [documents](/web-api/account-management/schema/documents) |                                                                                                                                                                                                                                                              | 包含与税务表格关联的文档详细信息。本部分的验证规则与客户注册时包含税务表格所适用的验证规则相同。                                                                                                                                                                                    |
+| \<TaxForm>                                                | [w8Ben](/account-management/schema/associatedindividual#w8ben)(非美国)  [localTaxForms](/account-management/schema/associatedindividual#localtaxforms) 或  [w9](/account-management/schema/associatedindividual#w9)(美国客户) | 输入新的税务表格详细信息。本部分的验证规则与客户注册时包含税务表格所适用的验证规则相同。                                                                                                                                                                                                                                                                              |
+| [documents](/account-management/schema/documents) |                                                                                                                                                                                                                                                              | 包含与税务表格关联的文档详细信息。本部分的验证规则与客户注册时包含税务表格所适用的验证规则相同。                                                                                                                                                                                    |
 
 ## 示例
 
@@ -512,7 +512,7 @@ PATCH /gw/api/v1/accounts
 
 | 名称                  | 类型                                                                                                  | 描述                                                                                |
 | --------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| addTradingPermissions | 对象数组 [tradingPermissions](/web-api/account-management/schema/accounts#tradingpermissions) | 所请求的交易权限。                                             |
+| addTradingPermissions | 对象数组 [tradingPermissions](/account-management/schema/accounts#tradingpermissions) | 所请求的交易权限。                                             |
 | accountId             | 字符串                                                                                                | 所提交请求对应的顾问/经纪商客户账户的 IBKR 账户 ID。 |
 
 ## 非披露客户示例
@@ -635,7 +635,7 @@ PATCH /gw/api/v1/accounts
 | 名称                    | 类型                                                                                                                                                                                                                                                               | 描述                                                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | accountId               | 字符串                                                                                                                                                                                                                                                             | 所提交请求对应的顾问/经纪商客户账户的 IBKR 账户 ID。 |
-| newFinancialInformation | 对象数组 [financialInformation  investmentExperience](/web-api/account-management/schema/accounts) [investmentObjectives](/web-api/account-management/schema/accounts#investmentobjectives) [sourcesOfWealth](/web-api/account-management/schema/accounts) | 提供更新后的信息。                                                               |
+| newFinancialInformation | 对象数组 [financialInformation  investmentExperience](/account-management/schema/accounts) [investmentObjectives](/account-management/schema/accounts#investmentobjectives) [sourcesOfWealth](/account-management/schema/accounts) | 提供更新后的信息。                                                               |
 
 ## 示例
 
@@ -723,7 +723,7 @@ PATCH /gw/api/v1/accounts
 | 名称      | 类型                                      | 描述                                                                                                                                                                                                                                                                                                                                                                                         |
 | --------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | accountId | 字符串                                    | 所提交请求对应的顾问/经纪商客户账户的 IBKR 账户 ID。                                                                                                                                                                                                                                                                                                          |
-| newMargin | RegT REGT PortfolioMargin PORTFOLIOMARGIN | **Portfolio Margin(投资组合保证金):** 基于风险的模型,对于多样化的投资组合可提供最高 6:1 的杠杆;对于较为集中的投资组合则可低至 3:1 的杠杆。最低权益:$100,000。如果账户低于 $100,000,账户将处于只能平仓(close only)模式。**RegT:** 基于规则的保证金,日内提供 4:1 杠杆,隔夜提供 2:1 杠杆。最低权益:\$2,000 |
+| newMargin | RegT REGT PortfolioMargin PORTFOLIOMARGIN | **Portfolio Margin(投资组合保证金):** 基于风险的模型,对于多样化的投资组合可提供最高 6:1 的杠杆;对于较为集中的投资组合则可低至 3:1 的杠杆。最低权益:\$100,000。如果账户低于 \$100,000,账户将处于只能平仓(close only)模式。**RegT:** 基于规则的保证金,日内提供 4:1 杠杆,隔夜提供 2:1 杠杆。最低权益:\$2,000 |
 
 ## 非披露客户示例
 
@@ -877,7 +877,7 @@ PATCH /gw/api/v1/accounts
 
 | 名称              | 类型                                                                                                  | 描述                                                                                |
 | ----------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| tradingPermission | 对象数组 [tradingPermissions](/web-api/account-management/schema/accounts#tradingpermissions) | 要移除的交易权限。                                                         |
+| tradingPermission | 对象数组 [tradingPermissions](/account-management/schema/accounts#tradingpermissions) | 要移除的交易权限。                                                         |
 | accountId         | 字符串                                                                                                | 所提交请求对应的顾问/经纪商客户账户的 IBKR 账户 ID。 |
 
 ## 示例

@@ -1,6 +1,6 @@
 # 第三方 OAuth 工作流程
 
-一旦获得第三方 OAuth(Third Party OAuth)批准,开发者必须使用提供的证书和消费者密钥(consumer key)为用户完成注册、授权并生成访问令牌(access token),之后才能获取用于[基于 OAuth 1.0A 的已验证请求](/web-api/authentication/oauth-1a/introduction)的实时会话令牌(Live Session Token)。
+一旦获得第三方 OAuth(Third Party OAuth)批准,开发者必须使用提供的证书和消费者密钥(consumer key)为用户完成注册、授权并生成访问令牌(access token),之后才能获取用于[基于 OAuth 1.0A 的已验证请求](/authentication/oauth-1-a/introduction)的实时会话令牌(Live Session Token)。
 
 #### 生成请求令牌(Request Token)
 

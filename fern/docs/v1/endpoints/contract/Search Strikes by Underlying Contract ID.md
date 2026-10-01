@@ -2,7 +2,7 @@
 
 查询以获取给定标的所支持的潜在行权价列表。
 
-除非事先对同一标的代码调用过 [/iserver/secdef/search](/web-api/v1/endpoints/contract/search-contract-by-symbol),否则此端点将始终返回空数组。在 [/iserver/secdef/search](/web-api/v1/endpoints/contract/search-contract-by-symbol) 端点中包含 name 字段将导致 strikes 端点不返回数据。在通过初始搜索检索到预期合约之后,希望创建期权链的开发者应从请求中移除 name 字段。
+除非事先对同一标的代码调用过 [/iserver/secdef/search](/v1/endpoints/contract/search-contract-by-symbol),否则此端点将始终返回空数组。在 [/iserver/secdef/search](/v1/endpoints/contract/search-contract-by-symbol) 端点中包含 name 字段将导致 strikes 端点不返回数据。在通过初始搜索检索到预期合约之后,希望创建期权链的开发者应从请求中移除 name 字段。
 
 `GET /iserver/secdef/strikes`
 

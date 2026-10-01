@@ -49,10 +49,10 @@ curl \
 server\_id 的字段值。返回请求的标识符。
 
 **fields\*:** String.\
-对每个请求返回一个响应。某些字段可能不像其他字段那样容易获取。更多信息请参阅 [Market Data Fields](/web-api/v1/endpoints/market-data/market-data-fields)。
+对每个请求返回一个响应。某些字段可能不像其他字段那样容易获取。更多信息请参阅 [Market Data Fields](/v1/endpoints/market-data/market-data-fields)。
 
 **6509:** String.\
-返回一个多字符的值，代表[市场数据可用性](/web-api/v1/endpoints/market-data/market-data-availability)。
+返回一个多字符的值，代表[市场数据可用性](/v1/endpoints/market-data/market-data-availability)。
 
 ```
 [

@@ -117,7 +117,7 @@ curl \
 指示工具的行业类别。
 
 **rules:** Object。\
-[参见 `/iserver/contract/rules` 端点。](/web-api/v1/endpoints/contract/search-contract-rules)
+[参见 `/iserver/contract/rules` 端点。](/v1/endpoints/contract/search-contract-rules)
 
 ```
 {

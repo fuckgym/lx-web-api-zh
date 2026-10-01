@@ -14,7 +14,7 @@
 感兴趣的标的符号。如果将 'name' 设置为 true,也可以传入公司名称;或传入债券发行人类型以检索债券。
 
 **name:** bool。\
-确定 symbol 是公司名称还是股票代码。如果包含公司名称,则只会收到有限响应:conid、companyName、companyHeader 和 symbol。包含 name 字段将导致 [/iserver/secdef/strikes](/web-api/v1/endpoints/contract/search-strikes-by-underlying-contract-id) 端点无法返回数据。在获取到预期合约后,希望创建期权链的客户应从请求中移除 name 字段。
+确定 symbol 是公司名称还是股票代码。如果包含公司名称,则只会收到有限响应:conid、companyName、companyHeader 和 symbol。包含 name 字段将导致 [/iserver/secdef/strikes](/v1/endpoints/contract/search-strikes-by-underlying-contract-id) 端点无法返回数据。在获取到预期合约后,希望创建期权链的客户应从请求中移除 name 字段。
 
 #### Python
 

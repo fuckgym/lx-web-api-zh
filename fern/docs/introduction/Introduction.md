@@ -2,11 +2,11 @@
 
 Interactive Brokers(IBKR)RESTful Web API 旨在为用户提供对其 IBKR 账户无缝、安全且实时的访问。Web API 与 IBKR 托管的应用程序并行运行,为用户提供可扩展且高效的核心服务访问。我们的 API 分为两个关键组成部分:
 
-#### [账户管理](/web-api/account-management/)
+#### [账户管理](/account-management/account-management-introduction/introduction)
 
 为介绍经纪商(Introducing Brokers)和财务顾问(Financial Advisors)提供解决方案,使其在依赖 IBKR 经纪服务的同时,保留现有的用户体验和界面设计。顾问和经纪商可以集成账户管理 API 来管理客户注册、客户账户维护、用户身份验证、入金和报告。
 
-#### [交易](/web-api/trading/)
+#### [交易](/trading/getting-started/introduction)
 
 我们的交易 API 面向所有 IBKR 客户免费提供,可用于管理交易、查看实时投资组合信息、访问市场数据、查看合约信息以及进行经纪会话身份验证。
 

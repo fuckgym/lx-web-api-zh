@@ -1,10 +1,10 @@
 # 生成报告
 
-首先，你将向 [/SendRequest 端点](/docs/web-api/api-reference/send-request) 发起 GET 请求，并将你的访问令牌与所需 Flex Query 模板的查询 ID 作为查询参数传入：
+首先，你将向 [/SendRequest 端点](https://ibkrcampus.com/docs/web-api/api-reference/send-request) 发起 GET 请求，并将你的访问令牌与所需 Flex Query 模板的查询 ID 作为查询参数传入：
 
 `https://ndcdyn.interactivebrokers.com/AccountManagement/FlexWebService/SendRequest?t={CurrentToken}&q={QueryID}&v=3`
 
-**重要提示：** [/SendRequest 端点](/docs/web-api/api-reference/send-request) 有 1 秒 1 次请求的限速限制。每分钟最多可提交 10 次请求。
+**重要提示：** [/SendRequest 端点](https://ibkrcampus.com/docs/web-api/api-reference/send-request) 有 1 秒 1 次请求的限速限制。每分钟最多可提交 10 次请求。
 
 ```
 requestBase = "https://ndcdyn.interactivebrokers.com/AccountManagement/FlexWebService"

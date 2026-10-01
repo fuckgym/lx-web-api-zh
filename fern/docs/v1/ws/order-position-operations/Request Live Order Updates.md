@@ -12,7 +12,7 @@
 ###### 参数:
 
 **filters**: 字符串数组\
-传入一个包含单个字符串的数组,指示要返回的排他性[订单状态值](/web-api/v1/endpoints/order-monitoring/order-status-value)。
+传入一个包含单个字符串的数组,指示要返回的排他性[订单状态值](/v1/endpoints/order-monitoring/order-status-value)。
 
 ```
 sor+{"filters":["Submitted"]}

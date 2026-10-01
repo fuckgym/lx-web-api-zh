@@ -5,7 +5,7 @@
 可以使用 `/v1/clients/{client-id}/internal-cash-transfers:bulk` 在符合条件的前提下,在 IBKR 账户之间进行内部现金划转。
 
 * 单个指令集中最多可包含 100 个划转请求。
-* 每 30-60 秒批量处理一次,除非指定了 `dateTimeToOccur`。划转将按 `dateTimeToOccur` 指定的时间处理。如需即时划转,请使用 [`internal_cash_transfer`](/web-api/account-management/funds-and-banking/internal-transfer)。
+* 每 30-60 秒批量处理一次,除非指定了 `dateTimeToOccur`。划转将按 `dateTimeToOccur` 指定的时间处理。如需即时划转,请使用 [`internal_cash_transfer`](/account-management/funds-and-banking/internal-transfer)。
 
 ## 请求参数
 
@@ -157,7 +157,7 @@ POST /v1/clients/{client-id}/internal-asset-transfers:bulk
 
 下面的示例使用 **Free of Payment(FOP)** 划转演示了此模式。相同的结构适用于所有受支持的划转类型:**ACATS**、**COMPLEX\_ASSET\_TRANSFER**、**FOP** 和 **ATON**。
 
-完整的 schema 详情请参阅[持仓划转(Position Transfers)](/web-api/account-management/funds-and-banking/position-transfers)部分。
+完整的 schema 详情请参阅[持仓划转(Position Transfers)](/account-management/funds-and-banking/position-transfers)部分。
 
 ### 示例
 

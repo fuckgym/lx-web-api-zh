@@ -5,7 +5,7 @@
 ## 基础 URL
 
 `localhost:5000`
-如果[修改了 listenPort](/web-api/authentication/cpgw/how-to-modify-the-client-portal-gateway-port),localhost 所使用的端口可能会改变。
+如果[修改了 listenPort](/authentication/cpgw/how-to-modify-the-client-portal-gateway-port),localhost 所使用的端口可能会改变。
 
 ## 请求头
 

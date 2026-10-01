@@ -1,6 +1,6 @@
 # 第三步:验证合约
 
-在调用 /search 和 /strikes 端点之后,用户可以使用 [/iserver/secdef/info endpoint](/web-api/v1/endpoints/contract/search-sec-def-information-by-conid) 端点来验证衍生品的 conId。对于您感兴趣的每一个行权价与权利(right)的组合,都应调用该端点。
+在调用 /search 和 /strikes 端点之后,用户可以使用 [/iserver/secdef/info endpoint](/v1/endpoints/contract/search-sec-def-information-by-conid) 端点来验证衍生品的 conId。对于您感兴趣的每一个行权价与权利(right)的组合,都应调用该端点。
 
 注意:对于期货期权(Futures Options),应指定标的指数(Index)的 conId,并明确注明其上市交易所。例如,CL 期货期权应将 "exchange=NYMEX" 作为附加查询参数进行指定。
 

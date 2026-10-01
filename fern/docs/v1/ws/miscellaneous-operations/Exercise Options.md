@@ -4,7 +4,7 @@
 
 要启动该流程，开发者必须发送一个携带 "exercise" 参数的握手请求。然后，用户需要将其期权的 ConID 传入 "CEX" 字段。
 
-在行权期权时，开发者还应保持[实时订单更新](/web-api/v1/ws/order-position-operations/request-live-order-updates)订阅，以确认最终结果。
+在行权期权时，开发者还应保持[实时订单更新](/v1/ws/order-position-operations/request-live-order-updates)订阅，以确认最终结果。
 
 ```
 shs+exercise+{"CEX":"Your_Option_Conid"}

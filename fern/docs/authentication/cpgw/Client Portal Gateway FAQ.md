@@ -17,4 +17,4 @@ Interactive Brokers 不支持 Client Portal Gateway 的自动化身份验证过�
 ## 运行 Client Portal Gateway 时,为什么收到 "Server listen failed Address already in use"?
 
 出现此错误是因为另一个进程正在占用监听端口。
-Mac 设备通常有其他软件在端口 5000 上运行,因此建议[更改 Client Portal Gateway 的默认端口](/web-api/authentication/cpgw/how-to-modify-the-client-portal-gateway-port)。
+Mac 设备通常有其他软件在端口 5000 上运行,因此建议[更改 Client Portal Gateway 的默认端口](/authentication/cpgw/how-to-modify-the-client-portal-gateway-port)。

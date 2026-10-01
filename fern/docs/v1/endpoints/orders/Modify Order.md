@@ -34,7 +34,7 @@ true 表示订单是通过界面人工修改的，false 表示订单是通过自
 **重要** 交易期货（Futures）和期货期权（Futures Options）合约时必须提供此字段，以遵守 [CME Group Rule 536-B](https://www.cmegroup.com/rulebook/files/cme-group-Rule-536-B-Tag1028.pdf)。\
 外部操作员（External Operator）字段应包含请求提交时负责该 API 操作的提交用户的相关信息。
 
-更多详情请参阅[下单](/web-api/v1/endpoints/orders/place-order)部分。
+更多详情请参阅[下单](/v1/endpoints/orders/place-order)部分。
 
 #### Python
 
@@ -80,7 +80,7 @@ curl \
 
 **order\_status:** String。\
 返回当前市价单的订单状态。\
-更多信息请参阅[订单状态值](/web-api/v1/endpoints/order-monitoring/order-status-value)。
+更多信息请参阅[订单状态值](/v1/endpoints/order-monitoring/order-status-value)。
 
 **encrypt\_message:** String。\
 返回 "1"，表示所发送的消息已加密。
@@ -99,7 +99,7 @@ curl \
 
 在某些情况下，您会收到一个 ID 以及一条关于您订单的消息。
 
-有关如何处理该确认的更多详情，请参阅[下单回复确认](/web-api/v1/endpoints/orders/place-order-reply-confirmation)部分。
+有关如何处理该确认的更多详情，请参阅[下单回复确认](/v1/endpoints/orders/place-order-reply-confirmation)部分。
 
 **id:** String。\
 返回与该订单特定警告确认相关的消息 ID。

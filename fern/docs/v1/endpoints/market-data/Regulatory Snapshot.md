@@ -4,7 +4,7 @@
 
 如果您已经付费购买或订阅了特定的 US Network 订阅,则您的账户不会被收费。
 
-有关监管快照和市场数据的更多信息,请参见[此处](/general/market-data-subscriptions/regulatory-snapshots)。
+有关监管快照和市场数据的更多信息,请参见[此处](https://ibkrcampus.com/general/market-data-subscriptions/regulatory-snapshots)。
 
 发送监管快照请求。\
 **每个请求将花费 0.01 美元(\$0.01 USD)**,除非您已订阅相应的交易所直连市场数据。
@@ -35,7 +35,7 @@ curl \
 
 #### 响应对象
 
-**注意:** 下方返回的整数字段也对应标准 /iserver/marketdata/snapshot 端点所使用的[市场数据字段(Market Data Field)](/general/market-data-subscriptions/regulatory-snapshots)值。
+**注意:** 下方返回的整数字段也对应标准 /iserver/marketdata/snapshot 端点所使用的[市场数据字段(Market Data Field)](https://ibkrcampus.com/general/market-data-subscriptions/regulatory-snapshots)值。
 
 **conid:** int。\
 返回该请求的合约 ID。

@@ -16,10 +16,10 @@
    * 验证可能需要 7-15 分钟。
    * 验证完成后,将通过 [/callback](https://www.interactivebrokers.com/campus/ibkr-api-page/webapi-ref-staging/#tag/Account-Management-Accounts/paths/~1gw~1api~1v1~1accounts~1%7BaccountId%7D~1login-messages/get) 发送通知。或者,也可以使用 [/gw/api/v1/client-instructions/\{clientInstructionId}](https://ibkrcampus.com/docs/web-api/api-reference/account-management/account-management-banking/get-client-instructions) 端点轮询状态。
 4. 验证完成后,状态将更新为以下之一:
-   * **PROCESSED:** ACH 指令已处理。ACH 指令可用于通过 Web API 或 IBKR Portal(Transfer & Pay)进行[存款](/web-api/account-management/funds-and-banking/cash-transfer/cash-transfer#deposit-funds)和[取款](/web-api/account-management/funds-and-banking/cash-transfer/cash-transfer#withdraw-funds)。
+   * **PROCESSED:** ACH 指令已处理。ACH 指令可用于通过 Web API 或 IBKR Portal(Transfer & Pay)进行[存款](/account-management/funds-and-banking/cash-transfer/introduction)和[取款](/account-management/funds-and-banking/cash-transfer/introduction)。
    * **PENDING**:EWS 验证正在进行中。
    * **PENDING\_VERIFICATION:** IBKR 会自动向所提供的银行账户发送微量金额。交易对手方需要使用 `"instructionType":"TRADITIONAL_BANK_INSTRUCTION_VERIFICATION"` 向 IBKR 提交微量金额。
-   * 此步骤完成后,状态将更新为 PROCESSED。这些银行指令可用于通过 Web API 或 IBKR Portal(Transfer & Pay)提交[存款](/web-api/account-management/funds-and-banking/cash-transfer/cash-transfer#deposit-funds)和[取款](/web-api/account-management/funds-and-banking/cash-transfer/cash-transfer#withdraw-funds)。
+   * 此步骤完成后,状态将更新为 PROCESSED。这些银行指令可用于通过 Web API 或 IBKR Portal(Transfer & Pay)提交[存款](/account-management/funds-and-banking/cash-transfer/introduction)和[取款](/account-management/funds-and-banking/cash-transfer/introduction)。
    * **REJECTED :** 无法使用 EWS 验证该指令。要继续使用 ACH,客户需要登录 IBKR Portal,通过 IBKR 托管的 Portal 添加指令。或者,用户需要改用其他入金方式。
 
 ### Schema

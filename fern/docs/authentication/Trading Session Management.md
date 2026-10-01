@@ -21,9 +21,9 @@
 
 经纪会话是有状态的。在创建新的经纪会话之后,需要(或强烈建议)立即执行一些步骤,其效果将在会话期间持续生效。
 
-* 经纪会话通过 [POST /iserver/auth/ssodh/init?publish=true\&compete=true](/web-api/api-reference/trading/trading-session/initialize-session) 创建。
+* 经纪会话通过 [POST /iserver/auth/ssodh/init?publish=true\&compete=true](/api-reference/trading/session/initialize-session) 创建。
 * 在 `/init` 请求成功后,API 客户端应等待 2 秒,然后再继续发出其他 `/iserver` 请求。
-* 在 2 秒的暂停之后,向 [GET /iserver/accounts](/web-api/api-reference/trading/trading-accounts/get-brokerage-accounts) 发出请求,并确认其响应非空。该非空响应表明经纪会话已激活并可供使用。
-* 可选但强烈建议:如果您打算使用经纪会话提交订单,可以考虑抑制该过程中发出的各类消息。这些消息通常表现为需要客户端进行额外确认或应答的形式,若无应答,订单将不会被接受。所有此类消息都可以通过向 [POST /iserver/questions/suppress](/web-api/api-reference/trading/trading-orders/suppress-order-replies) 发送一次请求来预先禁用,其载荷见[订单回复抑制](/web-api/trading/orders/order-reply-suppression)中的规定。
+* 在 2 秒的暂停之后,向 [GET /iserver/accounts](/api-reference/trading/accounts/get-brokerage-accounts) 发出请求,并确认其响应非空。该非空响应表明经纪会话已激活并可供使用。
+* 可选但强烈建议:如果您打算使用经纪会话提交订单,可以考虑抑制该过程中发出的各类消息。这些消息通常表现为需要客户端进行额外确认或应答的形式,若无应答,订单将不会被接受。所有此类消息都可以通过向 [POST /iserver/questions/suppress](/api-reference/trading/orders/suppress-order-replies) 发送一次请求来预先禁用,其载荷见[订单回复抑制](/trading/orders/order-reply-suppression)中的规定。
 
-经纪会话在超过 5 分钟未使用后将被终止。如果您打算在一天内持续使用经纪功能,我们强烈建议您只实例化一次经纪会话,并在需要期间保持其活跃,而不是反复执行上述启动流程。对任何 /iserver 端点的请求都可以实现这种保活(keep-alive)行为,通过 websocket 打开市场数据流也可以。或者,您可以定期轮询 [/tickle 端点](/web-api/api-reference/trading/trading-session/get-session-token)。
+经纪会话在超过 5 分钟未使用后将被终止。如果您打算在一天内持续使用经纪功能,我们强烈建议您只实例化一次经纪会话,并在需要期间保持其活跃,而不是反复执行上述启动流程。对任何 /iserver 端点的请求都可以实现这种保活(keep-alive)行为,通过 websocket 打开市场数据流也可以。或者,您可以定期轮询 [/tickle 端点](/v1/ws/connection-guide/retrieve-the-session-token)。

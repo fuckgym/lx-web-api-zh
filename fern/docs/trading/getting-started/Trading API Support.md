@@ -11,6 +11,6 @@ Interactive Brokers 随时欢迎客户联系我们的客户支持。我们提供
 * 该问题是否在其他平台上也存在?我是否能够通过 IB 的界面(如 Trader Workstation)而非 API 执行该操作(例如提交某个订单)?
 * 该问题最早是在何时被发现的?相同的请求过去是否产生过不同的响应?
 * 其他类似的请求是否能产生预期的响应?
-* 请求中是否包含了我们 [Web API 参考资料](/web-api/api-reference/)中标记为*必填*的参数?
+* 请求中是否包含了我们 [Web API 参考资料](/api-reference)中标记为*必填*的参数?
 
 拥有[销售代表](https://www.interactivebrokers.com/en/support/institutional-sales-contacts.php)的客户也可以考虑让其代表参与进来,他们可以协助将咨询转达给相应的团队。

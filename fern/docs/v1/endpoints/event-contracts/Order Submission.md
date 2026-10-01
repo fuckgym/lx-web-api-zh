@@ -1,6 +1,6 @@
 # 订单提交
 
-通过 Web API 提交事件合约订单的方式与[提交任何其他品种的订单](/web-api/v1/endpoints/orders/place-order)类似。
+通过 Web API 提交事件合约订单的方式与[提交任何其他品种的订单](/v1/endpoints/orders/place-order)类似。
 
 但必须注意 CME Group 产品与 ForecastEx 品种之间运作机制的差异:
 

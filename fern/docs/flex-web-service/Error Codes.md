@@ -1,6 +1,6 @@
 # 错误代码
 
-以下是 [/SendRequest 端点](/docs/web-api/api-reference/send-request)和 [/GetStatement 端点](/docs/web-api/flex-web-service/retrieve-the-report)在发生服务器端故障时可返回的错误代码汇总列表。
+以下是 [/SendRequest 端点](https://ibkrcampus.com/docs/web-api/api-reference/send-request)和 [/GetStatement 端点](/flex-web-service/using-flex-web-service/retrieve-the-report)在发生服务器端故障时可返回的错误代码汇总列表。
 
 | ErrorCode | ErrorMessage                                                                                                                                        |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |

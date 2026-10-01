@@ -6,7 +6,7 @@
 
 **sbd**\
 将用户订阅到 BookTrader 价格阶梯数据。\
-流式传输 BookTrader 数据要求用户保有 L2、Depth of Book（盘口深度）市场数据订阅。更多详情请参阅[市场数据订阅页面](/general/market-data-subscriptions/)。
+流式传输 BookTrader 数据要求用户保有 L2、Depth of Book（盘口深度）市场数据订阅。更多详情请参阅[市场数据订阅页面](https://ibkrcampus.com/general/market-data-subscriptions/)。
 
 ###### Topic Target:
 

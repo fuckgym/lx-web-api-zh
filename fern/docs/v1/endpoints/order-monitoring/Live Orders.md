@@ -3,9 +3,9 @@
 此端点需要预检请求(pre-flight request)。\
 orders 是实时订单(已取消、已成交、已提交)的列表。
 
-要获取特定账户的订单信息,客户必须先查询 [/iserver/account 端点](/web-api/v1/endpoints/accounts/switch-account)以切换到相应账户。
+要获取特定账户的订单信息,客户必须先查询 [/iserver/account 端点](/v1/endpoints/accounts/switch-account)以切换到相应账户。
 
-请注意,使用 /iserver/account/orders 端点筛选订单会阻止订单详情通过 [websocket "sor" 主题](/docs/web-api/v1/ws/order-position-operations/request-live-order-updates)传回。为解决此问题,开发人员应在后续的 /iserver/account/orders 调用中设置 "force=true",以清除围绕该端点的任何缓存行为,然后再发起 websocket 请求。
+请注意,使用 /iserver/account/orders 端点筛选订单会阻止订单详情通过 [websocket "sor" 主题](/v1/ws/order-position-operations/request-live-order-updates)传回。为解决此问题,开发人员应在后续的 /iserver/account/orders 调用中设置 "force=true",以清除围绕该端点的任何缓存行为,然后再发起 websocket 请求。
 
 `GET /iserver/account/orders`
 

@@ -2,7 +2,7 @@
 
 ### 零售客户
 
-对于零售和个人客户,我们的 WebAPI 身份验证通过 Client Portal Gateway 进行管理,这是一个用于以适当的身份验证方式路由本地 Web 请求的小型 Java 程序。点击[这里](/web-api/authentication/cpgw/installation-authentication)开始使用。
+对于零售和个人客户,我们的 WebAPI 身份验证通过 Client Portal Gateway 进行管理,这是一个用于以适当的身份验证方式路由本地 Web 请求的小型 Java 程序。点击[这里](/authentication/cpgw/installation-authentication)开始使用。
 
 ### 机构或第三方
 

@@ -11,15 +11,15 @@
 * 每个端点的示例载荷
 * 便于配置的环境变量
 
-#### [开发者工具包](/web-api/account-management/resources/developer-tool-kit)
+#### [开发者工具包](/account-management/resources/developer-tool-kit)
 
 * 身份验证与授权方法
 * 常见集成模式
 
-#### [示例应用程序](/web-api/account-management/resources/sample-applications)
+#### [示例应用程序](/account-management/resources/sample-applications)
 
 * 包含请求/响应示例的端点文档
 
-#### [示例响应](/web-api/account-management/resources/sample-responses/sample-responses)
+#### [示例响应](/account-management/resources/sample-responses/introduction)
 
 * 错误处理的最佳实践

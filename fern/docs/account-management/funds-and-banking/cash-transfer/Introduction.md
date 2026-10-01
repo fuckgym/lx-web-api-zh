@@ -74,7 +74,7 @@ POST /gw/api/v1/external-cash-transfers
 
 #### ACH 入金
 
-拥有[关联银行账户](/web-api/account-management/funds-and-banking/bank-instructions)的美国居民可以通过在 IBKR 发起的 ACH 无缝地将资金存入其 IBKR 经纪账户。
+拥有[关联银行账户](/account-management/funds-and-banking/bank-instructions)的美国居民可以通过在 IBKR 发起的 ACH 无缝地将资金存入其 IBKR 经纪账户。
 
 * 费用:免费
 * 交易限制:对于初始入金,第一笔入金需在客户门户(Client Portal)发起入金四个工作日后方可用于交易。后续入金可能立即可用(取决于账户存续时间、入金历史和账户余额)。否则需四个工作日后方可交易。
@@ -114,7 +114,7 @@ POST /gw/api/v1/external-cash-transfers
 ###### *通过 IBKR Portal 添加电汇指令*
 
 * 加入 Streamlined 计划的[顾问](https://ibkrguides.com/advisorportal/addadvauth.htm?Highlight=streamline)和[经纪商](https://www.ibkrguides.com/brokerportal/clientserviceprogram.htm)可以在 IBKR Portal Broker 中代表客户创建和管理银行指令。
-* 终端用户可以直接在 IBKR Portal 的 **Transfer & Pay > [Transfer Funds](https://www.ibkrguides.com/clientportal/transferandpay/enterwithdrawal.htm)** 下创建银行指令。或者,使用[单点登录(SSO)](/web-api/account-management/single-sign-on)将用户连接到 IBKR Portal,并设置深链接(deep link)。
+* 终端用户可以直接在 IBKR Portal 的 **Transfer & Pay > [Transfer Funds](https://www.ibkrguides.com/clientportal/transferandpay/enterwithdrawal.htm)** 下创建银行指令。或者,使用[单点登录(SSO)](/account-management/single-sign-on)将用户连接到 IBKR Portal,并设置深链接(deep link)。
 
 ## 示例
 
@@ -134,7 +134,7 @@ POST /gw/api/v1/external-cash-transfers
 
 #### ACH 出金
 
-拥有[关联银行账户](/web-api/account-management/funds-and-banking/bank-instructions)的美国居民可以通过 ACH 将资金从 IBKR 经纪账户无缝提款至银行账户。
+拥有[关联银行账户](/account-management/funds-and-banking/bank-instructions)的美国居民可以通过 ACH 将资金从 IBKR 经纪账户无缝提款至银行账户。
 
 ## 示例
 

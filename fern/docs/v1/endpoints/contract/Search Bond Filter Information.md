@@ -1,6 +1,6 @@
 # 债券搜索筛选条件信息
 
-请求与给定债券(Bond)issuerID 相关的筛选条件列表。issuerId 可通过 [/iserver/secdef/search](/web-api/v1/endpoints/contract/search-contract-by-symbol) 获取,并可在 [/iserver/secdef/info?issuerId=\{\{ issuerId }}](/web-api/v1/endpoints/contract/search-sec-def-information-by-conid) 中用于检索 conIds。
+请求与给定债券(Bond)issuerID 相关的筛选条件列表。issuerId 可通过 [/iserver/secdef/search](/v1/endpoints/contract/search-contract-by-symbol) 获取,并可在 [/iserver/secdef/info?issuerId=\{\{ issuerId }}](/v1/endpoints/contract/search-sec-def-information-by-conid) 中用于检索 conIds。
 
 `/iserver/secdef/bond-filters`
 

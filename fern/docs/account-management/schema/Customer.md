@@ -181,7 +181,7 @@
 
 **FA/FD:** **Individual、Retirement、Joint(所有实体)**
 
-* **AFFILIATION**:申请人或任何居住在同一住户内的直系亲属,是否注册为经纪自营商,或为证券或大宗商品经纪公司的雇员、董事或所有者?(是/否)如果为 **true**,则需要填写 [affiliationDetails](/web-api/account-management/schema/customer#affiliationdetails)。
+* **AFFILIATION**:申请人或任何居住在同一住户内的直系亲属,是否注册为经纪自营商,或为证券或大宗商品经纪公司的雇员、董事或所有者?(是/否)如果为 **true**,则需要填写 [affiliationDetails](/account-management/schema/customer#affiliationdetails)。
 
 **FA/FD/OWD:** **Individual、Retirement、Joint(除 IB-AU 外的所有实体)**
 

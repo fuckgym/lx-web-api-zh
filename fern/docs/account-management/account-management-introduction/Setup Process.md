@@ -24,8 +24,8 @@
    * 已签署的服务[协议](https://www.interactivebrokers.com/campus/wp-content/uploads/sites/2/2024/09/Web-API-Account-Management-Services-Agreement-3.pdf)
 2. IBKR 将提供用于访问 QA 环境的 QA 凭据。
 3. 构建接口并测试 IBKR 的 API。
-   * [开发者工具包](/web-api/account-management/resources/developer-tool-kit)包含快速入门指南
-   * 建议[测试用例](/web-api/account-management/resources/test-cases)
+   * [开发者工具包](/account-management/resources/developer-tool-kit)包含快速入门指南
+   * 建议[测试用例](/account-management/resources/test-cases)
 
 ### 上线
 

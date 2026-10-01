@@ -10,7 +10,7 @@
 
 **deviceId:** String。必填\
 要删除的设备的标识符,该设备位于 IB 保存的列表中。\
-可从 [/fyi/deliveryoptions](/web-api/v1/endpoints/fy-is-and-notifications/get-delivery-options) 获取。
+可从 [/fyi/deliveryoptions](/v1/endpoints/fy-is-and-notifications/get-delivery-options) 获取。
 
 #### Python
 

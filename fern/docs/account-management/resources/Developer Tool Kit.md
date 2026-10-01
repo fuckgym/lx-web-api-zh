@@ -47,7 +47,7 @@
 
 ### 创建经纪账户
 
-要在 IBKR 平台内为客户建立经纪账户,请使用 `[POST] gw/api/v1/accounts` 向 IBKR 提交客户数据。[请求](/web-api/account-management/resources/sample-applications)所需的[数据点](/web-api/account-management/client-registration/data-for-client-registration)会因账户类型和客户类型而异。
+要在 IBKR 平台内为客户建立经纪账户,请使用 `[POST] gw/api/v1/accounts` 向 IBKR 提交客户数据。[请求](/account-management/resources/sample-applications)所需的[数据点](/account-management/client-registration/data-for-client-registration)会因账户类型和客户类型而异。
 
 ### 身份验证与处理
 
@@ -59,7 +59,7 @@
 
 **创建成功**
 
-账户创建成功时,[响应](/web-api/account-management/resources/sample-responses/sample-responses)将包含:
+账户创建成功时,[响应](/account-management/resources/sample-responses/introduction)将包含:
 
 * IBKR 凭证 `user`
 * IBKR 账户号码 `accounts.value`
@@ -74,7 +74,7 @@
 如果发生错误,账户将不会建立。托管机构必须:
 
 1. 查看错误详情
-2. 根据 [**错误库(Error Library)**](/web-api/account-management/resources/sample-responses/error-handling)文档进行必要的更正
+2. 根据 [**错误库(Error Library)**](/account-management/resources/sample-responses/error-handling)文档进行必要的更正
 3. 重新提交请求
 
 ### 开立经纪账户
@@ -83,7 +83,7 @@
 
 `[GET] /gw/api/v1/accounts/{accountId}/status`
 
-* **Incomplete Application** = 使用[单点登录](/web-api/account-management/single-sign-on)将用户连接到 IBKR Portal,以完成在线注册流程。
+* **Incomplete Application** = 使用[单点登录](/account-management/single-sign-on)将用户连接到 IBKR Portal,以完成在线注册流程。
 * **Documents Required** = 需要采取措施
   * **查看审批所需的待处理任务**:`/gw/api/v1/accounts/{accountId}/tasks?type=pending`
 * **Under Review with IBKR** = 申请在 IBKR 处于 PENDING 状态,无需任何操作。
@@ -102,12 +102,12 @@
 **方案 1:API 方式**
 
 * 使用 PATCH 端点:`/api/v1/accounts/`
-* **限制**:仅支持部分[任务](/web-api/account-management/client-registration/registration-tasks/complete-registration-tasks)。
+* **限制**:仅支持部分[任务](/account-management/client-registration/registration-tasks/complete-registration-tasks)。
 * 最适合以编程方式完成受支持的任务
 
 **方案 2:通过单点登录使用 IBKR Portal**
 
-* 使用[单点登录](/web-api/account-management/single-sign-on)将用户重定向至 IBKR Portal 直接完成任务
+* 使用[单点登录](/account-management/single-sign-on)将用户重定向至 IBKR Portal 直接完成任务
 * **优势**:支持所有可能的任务;界面由 IBKR 托管,无需开发。
 
 **推荐实施方式**
@@ -126,11 +126,11 @@
 
 对于 Non-Disclosed 客户,所有资金必须通过 Non-Disclosed 主账户处理:
 
-* 入金通过从 Non-Disclosed 主账户向 Non-Disclosed 子账户进行现金或持仓的[内部划转](/web-api/account-management/funds-and-banking/internal-transfer)来发起
+* 入金通过从 Non-Disclosed 主账户向 Non-Disclosed 子账户进行现金或持仓的[内部划转](/account-management/funds-and-banking/internal-transfer)来发起
 
 ### Direct 客户
 
-对于 Direct 客户(包括 Fully-Disclosed 和 Advisor),入金直接在子账户层面通过[资金](/web-api/account-management/funds-and-banking/cash-transfer/cash-transfer)划转或[持仓](/web-api/account-management/funds-and-banking/position-transfers)划转发起。
+对于 Direct 客户(包括 Fully-Disclosed 和 Advisor),入金直接在子账户层面通过[资金](/account-management/funds-and-banking/cash-transfer/introduction)划转或[持仓](/account-management/funds-and-banking/position-transfers)划转发起。
 
 **重要:** 如果前端不支持某种划转方式,API 同样不会支持该方式
 
@@ -141,7 +141,7 @@
    * 返回一个 JSON 对象,其中包含对新创建 SSO 会话的引用(包括 SSO Bearer Token)。
 2. **初始化经纪会话**
    * `[POST]/iserver/auth/ssodh/init` :要使用所有 /iserver 交易与市场数据端点,此步骤必不可少。
-     * 有关交易 Web API 会话的更多背景信息可参见[此处](/web-api/authentication/sessions)。
+     * 有关交易 Web API 会话的更多背景信息可参见[此处](/authentication/managing-multiple-sessions)。
    * **接收经纪账户**(可选):通过 **\[GET\]/iserver/accounts** 接收用户有权交易的经纪账户列表、各自的别名以及当前的 *selectedAccount*。
 3. **下单**
    * `[POST]/iserver/account/{accountID}/orders`:可用订单类型包括(但不限于):MKT、LMT、STP、STP LMT、TRAIL、MOC、LOC、VWAP(IBALGO 订单)、Bracket、OCA、交易前分配组订单(针对财务顾问)、cashQty 订单等。
@@ -171,7 +171,7 @@
 
 实现全面的账户维护功能,对于审批后的有效客户管理至关重要。
 
-### [资料变更](/web-api/account-management/account-information/update-information)
+### [资料变更](/account-management/account-information/update-information)
 
 * **changeAccountHolderDetail**:更新客户账户信息,确保数据准确性并符合 KYC 要求。
 * **updateCredentials**:支持安全地更新与账户关联的电子邮件地址,以保障正常的客户沟通和安全协议。
@@ -180,7 +180,7 @@
 * **changeFinancialInformation**:允许更新客户的财务状况信息,包括投资目标、经验和财富来源。
 * **changeBaseCurrency**:支持国际客户以及币种需求发生变化的客户。
 
-### [账户功能](/web-api/account-management/account-information/update-information)
+### [账户功能](/account-management/account-information/update-information)
 
 * [交易权限](https://www.interactivebrokers.com/en/trading/products-stocks.php)
   * `addTradingPermissions`:在账户获得批准后,使客户能够随着需求的变化访问更多产品和市场。此功能通过对交易功能的受控访问实现适当的风险管理。
@@ -232,8 +232,8 @@
    * 如果返回了指令,可向用户提供使用现有指令的选项
    * 如果未返回任何指令,或用户不想使用已存档的指令,托管机构需告知用户需要添加指令才能处理请求。
 2. **添加银行指令**
-   * **ACH:**`/gw/api/v1/bank-instructions` 端点可用于向现有 IBKR 经纪账户添加银行指令。仅适用于拥有[关联银行账户](/web-api/account-management/funds-and-banking/bank-instructions)的美国居民。
-   * 其他支付类型和货币(包括 Open Banking、Wise、Bill Pay、EFT 等)需要使用 IBKR 托管界面添加。可利用我们的[单点登录(SSO)](/web-api/account-management/single-sign-on)功能和 IFRAME 嵌入,将这些选项无缝集成到您的平台中,使 IBKR 的入金页面能够在您的应用界面内原生显示。
+   * **ACH:**`/gw/api/v1/bank-instructions` 端点可用于向现有 IBKR 经纪账户添加银行指令。仅适用于拥有[关联银行账户](/account-management/funds-and-banking/bank-instructions)的美国居民。
+   * 其他支付类型和货币(包括 Open Banking、Wise、Bill Pay、EFT 等)需要使用 IBKR 托管界面添加。可利用我们的[单点登录(SSO)](/account-management/single-sign-on)功能和 IFRAME 嵌入,将这些选项无缝集成到您的平台中,使 IBKR 的入金页面能够在您的应用界面内原生显示。
 
 ### 查看可用现金余额
 

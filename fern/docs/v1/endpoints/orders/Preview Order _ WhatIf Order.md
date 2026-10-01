@@ -2,7 +2,7 @@
 
 此端点允许您在不实际提交订单的情况下预览订单，并且可以在响应中获得佣金信息。同时也支持括号订单（bracket order）。
 
-**注意：** 请注意，/whatif 订单也会受到我们的[消息抑制端点](/web-api/v1/endpoints/orders/suppress-messages)的影响。
+**注意：** 请注意，/whatif 订单也会受到我们的[消息抑制端点](/v1/endpoints/orders/suppress-messages)的影响。
 
 在请求 /whatif 端点之前，客户端必须先通过 /iserver/marketdata/snapshot 查询该合约品种。
 
@@ -12,7 +12,7 @@
 
 /whatif 端点的请求体内容与标准 /iserver/account/\{accountId}/orders 端点遵循相同的结构。
 
-更多详情请参阅[下单](/web-api/v1/endpoints/orders/place-order)部分。
+更多详情请参阅[下单](/v1/endpoints/orders/place-order)部分。
 
 #### Python
 

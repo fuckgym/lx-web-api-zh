@@ -2,7 +2,7 @@
 
 确认下单时呈现的订单注意事项和警告。收到回复消息后**必须**立即对订单进行回复。提交其他订单或其他请求将取消该订单，而尝试确认回复将导致 503 错误。
 
-希望避免接收 /reply 消息的用户可以考虑使用 [Suppression](/web-api/v1/endpoints/orders/suppress-messages) 端点来自动接受这些消息。
+希望避免接收 /reply 消息的用户可以考虑使用 [Suppression](/v1/endpoints/orders/suppress-messages) 端点来自动接受这些消息。
 
 #### Abap
 
@@ -35,7 +35,7 @@ curl \
 
 **order\_status:** String.\
 返回当前市价订单的订单状态。\
-更多信息请参阅[订单状态值](/web-api/v1/endpoints/order-monitoring/order-status-value)。
+更多信息请参阅[订单状态值](/v1/endpoints/order-monitoring/order-status-value)。
 
 **encrypt\_message:** String.\
 返回 "1" 以表示所发送的消息已加密。

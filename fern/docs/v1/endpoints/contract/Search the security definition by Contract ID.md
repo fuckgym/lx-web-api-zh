@@ -102,7 +102,7 @@ curl \
 返回该合约是否为美国合约。
 
 **incrementRules & displayRule:** Array。\
-返回有关下单增量的规则。并非对所有交易所都有效。如需更准确的规则详情，请参阅 [/iserver/contract/rules](/web-api/v1/endpoints/contract/search-contract-rules)。
+返回有关下单增量的规则。并非对所有交易所都有效。如需更准确的规则详情，请参阅 [/iserver/contract/rules](/v1/endpoints/contract/search-contract-rules)。
 
 **isEventContract:** bool。\
 返回该合约是否为事件合约（event contract）。

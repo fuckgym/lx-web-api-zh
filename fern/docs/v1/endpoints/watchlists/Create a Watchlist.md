@@ -72,7 +72,7 @@ curl \
 **instruments:** Empty Array.\
 始终返回一个空数组。\
 所提供的 conid 仍会出现在最终的自选列表中。\
-更多详情请参阅 [/iserver/watchlist?id](/web-api/v1/endpoints/watchlists/get-all-watchlists) 端点。
+更多详情请参阅 [/iserver/watchlist?id](/v1/endpoints/watchlists/get-all-watchlists) 端点。
 
 ```
 {

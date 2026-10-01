@@ -110,7 +110,7 @@ research: bool。
 返回关联配置（profile）组成的数组。
 
 **selectedAccount:** 字符串。\
-返回当前选中的账户。详见[切换账户](/web-api/v1/endpoints/accounts/switch-account)。
+返回当前选中的账户。详见[切换账户](/v1/endpoints/accounts/switch-account)。
 
 **serverInfo:** JSON 对象。\
 返回关于 IBKR 会话的信息。与 Client Portal Gateway 无关。

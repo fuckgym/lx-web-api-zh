@@ -9,14 +9,14 @@
 基于 Web API 的 websocket 端点,所有合约品种均可获取流式的、盘口顶档(top-of-the-book)的一级(level one)市场数据。
 
 **重要提示:** 市场数据流将在 15 分钟后终止。用户必须在 10 分钟后重新发送市场数据请求,以继续获取该合约品种的数据。\
-**注意:** 市场数据订阅的最大数量取决于您账户的[市场数据线路(Market Data Lines)](/general/market-data-subscriptions/market-data-lines/)。
+**注意:** 市场数据订阅的最大数量取决于您账户的[市场数据线路(Market Data Lines)](https://ibkrcampus.com/general/market-data-subscriptions/market-data-lines/)。
 
 ###### 主题目标(Topic Target):
 
 **conid:** 必填。\
 必须传入单个合约标识符。\
 请求的合约默认使用 SMART 路由。若要指定交易所,合约标识符应修改为:conId\@EXCHANGE,其中 EXCHANGE 是所请求的数据源。\
-组合(Combo)或价差(Spread)市场数据可以使用与[组合或价差订单(Combo or Spread Orders)](/web-api/v1/endpoints/orders/combo-spread-orders)相同的格式获取。唯一区别是必须传入值为 0 的 spread\_conid。
+组合(Combo)或价差(Spread)市场数据可以使用与[组合或价差订单(Combo or Spread Orders)](/v1/endpoints/orders/combo-spread-orders)相同的格式获取。唯一区别是必须传入值为 0 的 spread\_conid。
 
 ###### 参数(Arguments):
 
@@ -59,7 +59,7 @@ Interactive Brokers 的自选列表市场数据源自基于时间的快照间隔
 server\_id 的字段值。返回该请求的标识符。
 
 **fields\*:** 字符串。\
-为每个请求返回一条响应。某些字段可能不如其他字段那样 readily available。更多详情请参见[市场数据(Market Data)](/web-api/v1/endpoints/market-data/market-data-fields)部分。
+为每个请求返回一条响应。某些字段可能不如其他字段那样 readily available。更多详情请参见[市场数据(Market Data)](/v1/endpoints/market-data/market-data-fields)部分。
 
 **6509:** 字符串。\
 返回一个多字符值,表示市场数据可用性(Market Data Availability)。

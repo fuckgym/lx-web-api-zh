@@ -2,7 +2,7 @@
 
 要调用 Interactive Brokers 的接口来创建或修改数据,用户必须通过 localhost 使用 URL 端点。每次调用由一个基础 URL(base URL)和一个端点组成。
 
-[Client Portal Gateway](/web-api/authentication/introduction#client-portal-gateway) 的基础 URL 为:**[https://localhost:5000/v1/api](https://localhost:5000/v1/api)**
+[Client Portal Gateway](/authentication/introduction#client-portal-gateway) 的基础 URL 为:**[https://localhost:5000/v1/api](https://localhost:5000/v1/api)**
 
 默认情况下,Client Portal Gateway 不附带已签名的证书。因此,客户应选择自行对证书进行签名,或以"不安全(insecure)"方式向其 localhost 提交请求。
 

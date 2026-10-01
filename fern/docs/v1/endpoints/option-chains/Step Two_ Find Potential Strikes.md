@@ -1,6 +1,6 @@
 # 第二步:查找潜在行权价
 
-在查询 /iserver/secdef/search 端点之后,开发者现在应调用 [/iserver/secdef/strikes 端点](/web-api/v1/endpoints/contract/search-strikes-by-underlying-contract-id)。要接收相应的行权价,应指定 conId、secType 和到期月份。
+在查询 /iserver/secdef/search 端点之后,开发者现在应调用 [/iserver/secdef/strikes 端点](/v1/endpoints/contract/search-strikes-by-underlying-contract-id)。要接收相应的行权价,应指定 conId、secType 和到期月份。
 
 **即使您已经知道行权价,在继续之前也必须始终调用此端点。**
 
@@ -28,7 +28,7 @@ curl \
 
 注意:
 
-* 除非事先对同一标的代码调用过 [/iserver/secdef/search](/web-api/v1/endpoints/contract/search-contract-by-symbol),否则此端点将始终返回空数组。在 [/iserver/secdef/search](/web-api/v1/endpoints/contract/search-contract-by-symbol) 端点中包含 name 字段将导致 strikes 端点不返回数据。在通过初始搜索检索到预期合约之后,希望创建期权链的开发者应从请求中移除 name 字段。
+* 除非事先对同一标的代码调用过 [/iserver/secdef/search](/v1/endpoints/contract/search-contract-by-symbol),否则此端点将始终返回空数组。在 [/iserver/secdef/search](/v1/endpoints/contract/search-contract-by-symbol) 端点中包含 name 字段将导致 strikes 端点不返回数据。在通过初始搜索检索到预期合约之后,希望创建期权链的开发者应从请求中移除 name 字段。
 
 ```
 {

@@ -15,7 +15,7 @@
 | external\_id | String;最多 64 个字符 | 账户的标识符。该标识符将由交易对手方指定。 |
 | baseCurrency | 货币代码(3 位)。可用货币可参见[此处](https://www.interactivebrokers.com/en/support/fund-my-account.php)。 | 账户的基础货币。 |
 | alias | String;最多 80 个字符 | 账户的昵称。如果创建了账户别名,该别名将在对账单、门户和 TWS 中取代 IBKR 账号显示。 |
-| margin | Cash Margin RegT PortfolioMargin | 应用于账户的保证金规则类型。**Cash**:无保证金交易能力。**Margin/RegT**:基于规则的保证金,日内提供 4:1 杠杆,隔夜提供 2:1 杠杆。最低权益:$2,000 **Portfolio Margin**:基于风险的模型,分散的投资组合可提供高达 6:1 的杠杆;较集中的投资组合则低至 3:1 杠杆。最低权益:$100,000。若账户权益低于 \$100,000,账户将进入只平仓(close only)模式。注意:澳大利亚居民或 IB-AU 旗下账户不支持保证金交易。对于 IB-AU 账户,margin 始终为 "CASH" |
+| margin | Cash Margin RegT PortfolioMargin | 应用于账户的保证金规则类型。**Cash**:无保证金交易能力。**Margin/RegT**:基于规则的保证金,日内提供 4:1 杠杆,隔夜提供 2:1 杠杆。最低权益:\$2,000 **Portfolio Margin**:基于风险的模型,分散的投资组合可提供高达 6:1 的杠杆;较集中的投资组合则低至 3:1 杠杆。最低权益:\$100,000。若账户权益低于 \$100,000,账户将进入只平仓(close only)模式。注意:澳大利亚居民或 IB-AU 旗下账户不支持保证金交易。对于 IB-AU 账户,margin 始终为 "CASH" |
 
 ## capabilities
 

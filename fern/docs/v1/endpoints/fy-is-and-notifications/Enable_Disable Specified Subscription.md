@@ -10,13 +10,13 @@
 
 **typecode:** String。必填\
 用于表示特定 FYI 模板类型的代码。\
-更多详情请参见 [Typecode](/web-api/v1/endpoints/fy-is-and-notifications/fyi-typecodes) 部分。
+更多详情请参见 [Typecode](/v1/endpoints/fy-is-and-notifications/fyi-typecodes) 部分。
 
 ###### 正文参数
 
 **enabled:** bool。必填\
 启用或禁用该订阅。\
-可用 typecode 请参见 [FYI Typecodes](/web-api/v1/endpoints/fy-is-and-notifications/fyi-typecodes)\
+可用 typecode 请参见 [FYI Typecodes](/v1/endpoints/fy-is-and-notifications/fyi-typecodes)\
 值格式:true:启用;false:禁用
 
 #### Python

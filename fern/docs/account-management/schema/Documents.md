@@ -1,6 +1,6 @@
 # 文档（Documents）
 
-包括在 IBKR 开设经纪账户所需的表单。这包括任何[协议与披露文件](/web-api/account-management/client-registration/agreements-and-disclosures)、税务表格（Tax Form），以及诸如身份证明和地址证明文件等补充文档。
+包括在 IBKR 开设经纪账户所需的表单。这包括任何[协议与披露文件](/account-management/client-registration/agreements-and-disclosures)、税务表格（Tax Form），以及诸如身份证明和地址证明文件等补充文档。
 
 所需表单会因账户配置和账户类型而异。
 

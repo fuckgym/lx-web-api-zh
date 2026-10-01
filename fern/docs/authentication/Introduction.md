@@ -31,7 +31,7 @@ OAuth 1.0a 是第三方开发者唯一支持的身份验证方法。
 
 ### 快速入门
 
-请参阅我们的 [OAuth 1.0a](/web-api/authentication/oauth-1a/introduction) 部分,了解如何使用 Client Portal Gateway 进行身份验证。
+请参阅我们的 [OAuth 1.0a](/authentication/oauth-1-a/introduction) 部分,了解如何使用 Client Portal Gateway 进行身份验证。
 
 ## OAuth 2.0
 

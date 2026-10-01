@@ -7,7 +7,7 @@
 * **Hybrid(混合)**:通过 API 向 IBKR 提交部分申请数据以创建账户。用户将通过 IBKR 白标(White Branded)应用程序输入其余申请数据。该应用程序会预先填入通过 API 传递的数据。
   * 使用[单点登录(Single Sign On)](https://ibkrcampus.com/docs/web-api/api-reference/authentication/oauth-2-0/create-sso-sessions)将用户连接到 IBKR 白标注册流程。或者,向用户提供登录 URL 以访问 IBKR Portal。用户访问 IBKR Portal 后,将被提示完成注册流程。
 
-*IBKR 的可用注册选项(包括 IBKR 托管解决方案)可在[此处](/web-api/account-management/resources/registration-options)找到。*
+*IBKR 的可用注册选项(包括 IBKR 托管解决方案)可在[此处](/account-management/resources/registration-options)找到。*
 
 ### Full Integration 与 Hybrid 的对比
 
@@ -24,4 +24,4 @@
 | 费用                     | 是,托管机构需支付一次性费用和年费。定价模型会考虑集成的复杂程度和所需服务的范围。                                                                                                                                                                              | 是,托管机构\[交易对手方]需支付一次性费用和年费。定价模型会考虑集成的复杂程度和所需服务的范围。                                                                                                                        |
 | 支持的平台               | 由托管机构决定。                                                                                                                                                                                                                                                | 桌面设备或移动设备上的浏览器                                                                                                                                                                                           |
 | 支持的客户类型           | 个人 联名 退休账户(美国和加拿大)  ISA(英国) JISA(英国) SMSF(澳大利亚)                                                                                                                                                                                       | 个人 联名 退休账户(美国和加拿大)  ISA(英国) JISA(英国) SMSF(澳大利亚)  组织(公司、LLC、合伙企业)  信托                                                                                                              |
-| 最低数据要求             | 所有申请数据,包括文档(协议、披露文件以及已填写的税务表格)(如适用)。根据账户类型和客户类型所需的数据可参阅[此处](/web-api/account-management/client-registration/data-for-client-registration)的表格。                                                       | **Fully-Disclosed(全披露)和 Advisor(顾问)客户:**IBKR 开立账户最低要求提供姓名、电子邮箱和居住国家。**Non-Disclosed(非披露):**需要所有申请数据,已填写的税务表格除外。                                                |
+| 最低数据要求             | 所有申请数据,包括文档(协议、披露文件以及已填写的税务表格)(如适用)。根据账户类型和客户类型所需的数据可参阅[此处](/account-management/client-registration/data-for-client-registration)的表格。                                                       | **Fully-Disclosed(全披露)和 Advisor(顾问)客户:**IBKR 开立账户最低要求提供姓名、电子邮箱和居住国家。**Non-Disclosed(非披露):**需要所有申请数据,已填写的税务表格除外。                                                |

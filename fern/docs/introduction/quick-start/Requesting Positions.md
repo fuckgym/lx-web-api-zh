@@ -1,6 +1,6 @@
 # 请求持仓
 
-要请求账户的持仓，必须先查询 `/portfolio/accounts` 端点。向该端点发送请求后，即可通过 [`/portfolio2/:accountId/positions`](/web-api/api-reference/trading/trading-portfolio/get-uncached-positions) 端点查询账户持仓。
+要请求账户的持仓，必须先查询 `/portfolio/accounts` 端点。向该端点发送请求后，即可通过 [`/portfolio2/:accountId/positions`](/api-reference/trading/portfolio/get-uncached-positions) 端点查询账户持仓。
 
 **`Python`**
 

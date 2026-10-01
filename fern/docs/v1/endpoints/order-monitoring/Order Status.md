@@ -4,7 +4,7 @@ Order Status 端点可用于在单个特定订单保持活跃期间对其进行�
 
 重要提示:
 
-* 对于财务顾问(Financial Advisors)或关联账户结构等多账户结构,用户必须在请求订单状态之前调用 [/iserver/account](/web-api/v1/endpoints/accounts/switch-account) 切换到相应的关联账户。否则预计会导致 '503' 错误。
+* 对于财务顾问(Financial Advisors)或关联账户结构等多账户结构,用户必须在请求订单状态之前调用 [/iserver/account](/v1/endpoints/accounts/switch-account) 切换到相应的关联账户。否则预计会导致 '503' 错误。
 * 如果订单在当前活跃会话之前已被取消或成交,且没有保存任何缓存信息,则查询订单状态端点预计会导致 '503' 错误。
 
 使用下单响应返回的 orderId,或实时订单(live order)响应中提供的 orderId,获取单个订单的给定状态。

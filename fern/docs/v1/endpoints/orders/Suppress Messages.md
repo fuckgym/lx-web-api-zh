@@ -11,7 +11,7 @@
 **messageIds:** String 数组。\
 要屏蔽的每条警告消息的标识符。\
 该数组最多支持在单个请求中发送 51 条消息。任何额外的值都会导致系统错误。\
-唯一支持的消息 ID 列在我们[可屏蔽的消息 ID](/web-api/v1/endpoints/orders/suppressible-message-ids)列表中。不过,用户应仅在需要时才屏蔽消息,以避免出现意外的订单提交。
+唯一支持的消息 ID 列在我们[可屏蔽的消息 ID](/v1/endpoints/orders/suppressible-message-ids)列表中。不过,用户应仅在需要时才屏蔽消息,以避免出现意外的订单提交。
 
 #### Python
 

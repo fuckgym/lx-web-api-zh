@@ -1,0 +1,974 @@
+[
+ {
+  "section": "认证",
+  "slug": "authentication",
+  "contents": [
+   {
+    "section": "OAuth 1.0a 授权",
+    "slug": "oauth-1-0a",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/oauth/request_token",
+      "slug": "req-temp-token"
+     },
+     {
+      "endpoint": "POST /v1/api/oauth/access_token",
+      "slug": "req-access-token"
+     },
+     {
+      "endpoint": "POST /v1/api/oauth/live_session_token",
+      "slug": "req-live-session-token"
+     }
+    ]
+   },
+   {
+    "section": "SSO 浏览器会话",
+    "slug": "sso-browser-sessions",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/sso-browser-sessions",
+      "slug": "create-sso-browser-sessions"
+     }
+    ]
+   },
+   {
+    "section": "SSO 会话",
+    "slug": "sso-sessions",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/sso-sessions",
+      "slug": "create-sso-sessions"
+     }
+    ]
+   },
+   {
+    "section": "授权令牌",
+    "slug": "token",
+    "contents": [
+     {
+      "endpoint": "POST /oauth2/api/v1/token",
+      "slug": "generate-token"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "交易",
+  "slug": "trading",
+  "contents": [
+   {
+    "section": "交易账户",
+    "slug": "accounts",
+    "contents": [
+     {
+      "endpoint": "GET /v1/api/iserver/account/pnl/partitioned",
+      "slug": "get-pnl"
+     },
+     {
+      "endpoint": "GET /v1/api/acesws/{accountId}/signatures-and-owners",
+      "slug": "get-account-owners"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/accounts",
+      "slug": "get-brokerage-accounts"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/search/{searchPattern}",
+      "slug": "get-dynamic-accounts"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/dynaccount",
+      "slug": "set-dynamic-account"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/{accountId}/summary/balances",
+      "slug": "get-balance-summary"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/{accountId}/summary/margins",
+      "slug": "get-margin-summary"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/{accountId}/summary/market_value",
+      "slug": "get-account-market-summary"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/{accountId}/summary",
+      "slug": "get-account-summary"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/{accountId}/summary/available_funds",
+      "slug": "get-fund-summary"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account",
+      "slug": "set-active-account"
+     }
+    ]
+   },
+   {
+    "section": "交易警报",
+    "slug": "alerts",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/iserver/account/{accountId}/alert/activate",
+      "slug": "activate-alert"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/{accountId}/alert",
+      "slug": "create-alert"
+     },
+     {
+      "endpoint": "DELETE /v1/api/iserver/account/{accountId}/alert/{alertId}",
+      "slug": "delete-alert"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/mta",
+      "slug": "get-mta-details"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/alert/{alertId}",
+      "slug": "get-alert-details"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/{accountId}/alerts",
+      "slug": "get-all-alerts"
+     }
+    ]
+   },
+   {
+    "section": "交易合约",
+    "slug": "contracts",
+    "contents": [
+     {
+      "endpoint": "GET /v1/api/iserver/currency/pairs",
+      "slug": "get-currency-pairs"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/exchangerate",
+      "slug": "get-exchange-rates"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/contract/{conid}/info",
+      "slug": "get-instrument-info"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/secdef/info",
+      "slug": "get-contract-info"
+     },
+     {
+      "endpoint": "GET /v1/api/trsrv/secdef",
+      "slug": "get-instrument-definition"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/contract/{conid}/info-and-rules",
+      "slug": "get-info-and-rules"
+     },
+     {
+      "endpoint": "GET /v1/api/trsrv/all-conids",
+      "slug": "get-conids-by-exchange"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/contract/{conid}/algos",
+      "slug": "get-algos-by-instrument"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/secdef/bond-filters",
+      "slug": "get-bond-filters"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/contract/rules",
+      "slug": "get-contract-rules"
+     },
+     {
+      "endpoint": "GET /v1/api/trsrv/futures",
+      "slug": "get-future-by-symbol"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/secdef/search",
+      "slug": "get-contract-symbols"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/secdef/search",
+      "slug": "get-contract-symbols-from-body"
+     },
+     {
+      "endpoint": "GET /v1/api/trsrv/stocks",
+      "slug": "get-stock-by-symbol"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/secdef/strikes",
+      "slug": "get-contract-strikes"
+     },
+     {
+      "endpoint": "GET /v1/api/trsrv/secdef/schedule",
+      "slug": "get-trading-schedule"
+     }
+    ]
+   },
+   {
+    "section": "事件合约",
+    "slug": "event-contracts",
+    "contents": [
+     {
+      "endpoint": "GET /v1/api/forecast/category/tree",
+      "slug": "get-forecast-categories"
+     },
+     {
+      "endpoint": "GET /v1/api/forecast/contract/details",
+      "slug": "get-forecast-contract"
+     },
+     {
+      "endpoint": "GET /v1/api/forecast/contract/rules",
+      "slug": "get-forecast-rules"
+     },
+     {
+      "endpoint": "GET /v1/api/forecast/contract/schedules",
+      "slug": "get-forecast-schedule"
+     },
+     {
+      "endpoint": "GET /v1/api/forecast/contract/market",
+      "slug": "get-forecast-markets"
+     }
+    ]
+   },
+   {
+    "section": "FA 分配管理",
+    "slug": "fa-allocation-management",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/iserver/account/allocation/group",
+      "slug": "create-allocation-group"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/allocation/group",
+      "slug": "get-allocation-groups"
+     },
+     {
+      "endpoint": "PUT /v1/api/iserver/account/allocation/group",
+      "slug": "modify-allocation-group"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/allocation/group/delete",
+      "slug": "delete-allocation-group"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/allocation/accounts",
+      "slug": "get-allocatable-subaccounts"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/allocation/presets",
+      "slug": "get-allocation-presets"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/allocation/presets",
+      "slug": "set-allocation-preset"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/allocation/group/single",
+      "slug": "get-single-allocation-group"
+     }
+    ]
+   },
+   {
+    "section": "FA 模型组合",
+    "slug": "fa-model-portfolios",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/fa/fa-preset/get",
+      "slug": "get-model-presets"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/accounts-details",
+      "slug": "get-accounts-in-model"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/invest-divest",
+      "slug": "set-accountinvestment-in-model"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/is-full-master",
+      "slug": "is-full-master"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/allocation/models",
+      "slug": "get-allocation-models"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/cash-analyzer",
+      "slug": "model-cash-analyzer"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/rebalance/to-existing-targets",
+      "slug": "rebalance-to-existing-targets"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/rebalance/to-new-targets",
+      "slug": "rebalance-to-new-targets"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/rebalance/to-specific-targets",
+      "slug": "rebalance-to-specific-targets"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/list",
+      "slug": "get-allmodels"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/positions",
+      "slug": "get-all-model-positions"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/summary",
+      "slug": "get-model-summary-single"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/save",
+      "slug": "set-model-target-positions"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/fa-preset/save",
+      "slug": "set-model-presets"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/{modelCode}/orders",
+      "slug": "submit-model-portfolio-order"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/submit-transfers",
+      "slug": "submit-model-orders"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/invest-divest-positions",
+      "slug": "get-invested-accounts-in-model"
+     },
+     {
+      "endpoint": "POST /v1/api/fa/model/tws-invest-divest",
+      "slug": "tws-invest-divest"
+     }
+    ]
+   },
+   {
+    "section": "FYI 与通知",
+    "slug": "fyis-and-notifications",
+    "contents": [
+     {
+      "endpoint": "DELETE /v1/api/fyi/deliveryoptions/{deviceId}",
+      "slug": "delete-fyi-device"
+     },
+     {
+      "endpoint": "GET /v1/api/fyi/deliveryoptions",
+      "slug": "get-fyi-delivery"
+     },
+     {
+      "endpoint": "GET /v1/api/fyi/disclaimer/{typecode}",
+      "slug": "get-fyi-disclaimerss"
+     },
+     {
+      "endpoint": "PUT /v1/api/fyi/disclaimer/{typecode}",
+      "slug": "read-fyi-disclaimer"
+     },
+     {
+      "endpoint": "GET /v1/api/fyi/settings",
+      "slug": "get-fyi-settings"
+     },
+     {
+      "endpoint": "GET /v1/api/fyi/unreadnumber",
+      "slug": "get-unread-fyis"
+     },
+     {
+      "endpoint": "GET /v1/api/fyi/notifications",
+      "slug": "get-all-fyis"
+     },
+     {
+      "endpoint": "PUT /v1/api/fyi/notifications/{notificationId}",
+      "slug": "read-fyi-notification"
+     },
+     {
+      "endpoint": "POST /v1/api/fyi/settings/{typecode}",
+      "slug": "modify-fyi-notification"
+     },
+     {
+      "endpoint": "POST /v1/api/fyi/deliveryoptions/device",
+      "slug": "modify-fyi-delivery"
+     },
+     {
+      "endpoint": "PUT /v1/api/fyi/deliveryoptions/email",
+      "slug": "modify-fyi-emails"
+     }
+    ]
+   },
+   {
+    "section": "行情数据",
+    "slug": "market-data",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/iserver/marketdata/unsubscribe",
+      "slug": "close-md-stream"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/marketdata/unsubscribeall",
+      "slug": "close-all-md-streams"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/marketdata/history",
+      "slug": "get-md-history"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/marketdata/snapshot",
+      "slug": "get-md-snapshot"
+     }
+    ]
+   },
+   {
+    "section": "交易订单",
+    "slug": "orders",
+    "contents": [
+     {
+      "endpoint": "DELETE /v1/api/iserver/account/{accountId}/order/{orderId}",
+      "slug": "cancel-open-order"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/{accountId}/order/{orderId}",
+      "slug": "modify-open-order"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/reply/{replyId}",
+      "slug": "confirm-order-reply"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/notification",
+      "slug": "ack-server-prompt"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/orders",
+      "slug": "get-open-orders"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/{accountId}/orders/whatif",
+      "slug": "preview-margin-impact"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/questions/suppress/reset",
+      "slug": "reset-order-suppression"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/order/status/{orderId}",
+      "slug": "get-order-status"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/account/{accountId}/orders",
+      "slug": "submit-new-order"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/questions/suppress",
+      "slug": "suppress-order-replies"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/account/trades",
+      "slug": "get-trade-history"
+     }
+    ]
+   },
+   {
+    "section": "投资组合",
+    "slug": "portfolio",
+    "contents": [
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/allocation",
+      "slug": "get-asset-allocation"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/meta",
+      "slug": "get-portfolio-metadata"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/ledger",
+      "slug": "get-portfolio-ledger"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/summary",
+      "slug": "get-portfolio-summary"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/position/{conid}",
+      "slug": "get-position-by-conid"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/positions/{pageId}",
+      "slug": "get-paginated-positions"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio2/{accountId}/positions",
+      "slug": "get-uncached-positions"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/positions/{conid}",
+      "slug": "get-all-accounts-for-conid"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/{accountId}/combo/positions",
+      "slug": "get-combo-positions"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/accounts",
+      "slug": "get-all-accounts"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/subaccounts",
+      "slug": "get-all-subaccounts"
+     },
+     {
+      "endpoint": "GET /v1/api/portfolio/subaccounts2",
+      "slug": "get-many-subaccounts"
+     },
+     {
+      "endpoint": "POST /v1/api/portfolio/{accountId}/positions/invalidate",
+      "slug": "invalidate-position-cache"
+     }
+    ]
+   },
+   {
+    "section": "投资组合分析",
+    "slug": "portfolio-analyst",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/pa/performance",
+      "slug": "get-single-performance-period"
+     },
+     {
+      "endpoint": "POST /v1/api/pa/allperiods",
+      "slug": "get-performance-all-periods"
+     },
+     {
+      "endpoint": "POST /v1/api/pa/allocation",
+      "slug": "create-allocation"
+     },
+     {
+      "endpoint": "POST /v1/api/pa/transactions",
+      "slug": "get-transactions"
+     }
+    ]
+   },
+   {
+    "section": "市场扫描器",
+    "slug": "scanner",
+    "contents": [
+     {
+      "endpoint": "GET /v1/api/iserver/scanner/params",
+      "slug": "get-scanner-parameters"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/scanner/run",
+      "slug": "get-scanner-results"
+     }
+    ]
+   },
+   {
+    "section": "交易会话",
+    "slug": "session",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/tickle",
+      "slug": "get-session-token"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/auth/status",
+      "slug": "get-brokerage-status"
+     },
+     {
+      "endpoint": "POST /v1/api/iserver/auth/ssodh/init",
+      "slug": "initialize-session"
+     },
+     {
+      "endpoint": "POST /v1/api/logout",
+      "slug": "logout"
+     },
+     {
+      "endpoint": "GET /v1/api/sso/validate",
+      "slug": "get-session-validation"
+     }
+    ]
+   },
+   {
+    "section": "自选列表",
+    "slug": "watchlists",
+    "contents": [
+     {
+      "endpoint": "POST /v1/api/iserver/watchlist",
+      "slug": "post-new-watchlist"
+     },
+     {
+      "endpoint": "DELETE /v1/api/iserver/watchlist",
+      "slug": "delete-watchlist"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/watchlist",
+      "slug": "get-specific-watchlist"
+     },
+     {
+      "endpoint": "GET /v1/api/iserver/watchlists",
+      "slug": "get-all-watchlists"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "账户管理",
+  "slug": "account-management",
+  "contents": [
+   {
+    "section": "账户管理 账户",
+    "slug": "accounts",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/accounts/{accountId}/tasks",
+      "slug": "create-accounts-tasks"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/{accountId}/tasks",
+      "slug": "get-accounts-tasks"
+     },
+     {
+      "endpoint": "PATCH /gw/api/v1/accounts/{accountId}/tasks",
+      "slug": "update-accounts-tasks"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/accounts",
+      "slug": "create-accounts"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts",
+      "slug": "list-accounts"
+     },
+     {
+      "endpoint": "PATCH /gw/api/v1/accounts",
+      "slug": "update-accounts"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/{accountId}/details",
+      "slug": "get-accounts-details"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/status",
+      "slug": "list-accounts-status"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/{accountId}/login-messages",
+      "slug": "get-accounts-login-messages"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/login-messages",
+      "slug": "list-accounts-login-messages"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/{accountId}/status",
+      "slug": "get-accounts-status"
+     },
+     {
+      "endpoint": "PATCH /gw/api/v1/accounts/{accountId}/status",
+      "slug": "update-accounts-status"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/accounts/{accountId}/kyc",
+      "slug": "get-accounts-kyc"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/accounts/documents",
+      "slug": "create-accounts-documents"
+     }
+    ]
+   },
+   {
+    "section": "账户管理 银行业务",
+    "slug": "banking",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/instructions/cancel",
+      "slug": "create-instructions-cancel"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/bank-instructions:bulk",
+      "slug": "bulk-bank-instructions"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/instructions/cancel:bulk",
+      "slug": "bulk-instructions-cancel"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/external-asset-transfers:bulk",
+      "slug": "bulk-external-asset-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v2/external-asset-transfers:bulk",
+      "slug": "bulk-external-asset-transfers-2"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/external-cash-transfers:bulk",
+      "slug": "bulk-external-cash-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/internal-asset-transfers:bulk",
+      "slug": "bulk-internal-asset-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/internal-cash-transfers:bulk",
+      "slug": "bulk-internal-cash-transfers"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/client-instructions/{clientInstructionId}",
+      "slug": "get-client-instructions"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/instructions/{instructionId}",
+      "slug": "get-instructions"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/instruction-sets/{instructionSetId}",
+      "slug": "get-instruction-sets"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/instructions/query",
+      "slug": "create-instructions-query"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/bank-instructions",
+      "slug": "create-bank-instructions"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/external-cash-transfers",
+      "slug": "create-external-cash-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/internal-cash-transfers",
+      "slug": "create-internal-cash-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/external-asset-transfers",
+      "slug": "create-external-asset-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v2/external-asset-transfers",
+      "slug": "create-external-asset-transfers-2"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/internal-asset-transfers",
+      "slug": "create-internal-asset-transfers"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/bank-instructions/query",
+      "slug": "create-bank-instructions-query"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/external-cash-transfers/query",
+      "slug": "create-external-cash-transfers-query"
+     }
+    ]
+   },
+   {
+    "section": "账户管理 报表",
+    "slug": "reports",
+    "contents": [
+     {
+      "endpoint": "GET /gw/api/v1/statements/available",
+      "slug": "list-statements-available"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/tax-documents/available",
+      "slug": "list-tax-documents-available"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/trade-confirmations/available",
+      "slug": "list-trade-confirmations-available"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/tax-documents",
+      "slug": "create-tax-documents"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/trade-confirmations",
+      "slug": "create-trade-confirmations"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/statements",
+      "slug": "create-statements"
+     }
+    ]
+   },
+   {
+    "section": "账户管理 实用工具",
+    "slug": "utilities",
+    "contents": [
+     {
+      "endpoint": "GET /gw/api/v1/enumerations/complex-asset-transfer",
+      "slug": "list-enumerations-complex-asset-transfer"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/enumerations/{enumerationType}",
+      "slug": "get-enumerations"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/forms",
+      "slug": "list-forms"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/participating-banks",
+      "slug": "list-participating-banks"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/requests",
+      "slug": "list-requests"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/forms/required-forms",
+      "slug": "list-forms-required-forms"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/requests/{requestId}/status",
+      "slug": "get-requests-status"
+     },
+     {
+      "endpoint": "PATCH /gw/api/v1/requests/{requestId}/status",
+      "slug": "update-requests-status"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/validations/usernames/{username}",
+      "slug": "get-validations-usernames"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "交易前合规",
+  "slug": "pre-trade-compliance",
+  "contents": [
+   {
+    "section": "交易前合规限制",
+    "slug": "restrictions",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/restrictions",
+      "slug": "apply-csv"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/list",
+      "slug": "get-list-details"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/lists/ids",
+      "slug": "get-master-list-ids"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/restriction",
+      "slug": "get-restriction-details"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/ids",
+      "slug": "get-master-restriction-ids"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/user",
+      "slug": "get-user-restrictions"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/account",
+      "slug": "get-account-restrictions"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/restrictions/restriction-scope",
+      "slug": "get-restriction-scope"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/restrictions/verify",
+      "slug": "verify-csv"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "第三方",
+  "slug": "third-parties",
+  "contents": [
+   {
+    "section": "第三方 现金余额",
+    "slug": "cash-balances",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/balances/query",
+      "slug": "create-balances-query"
+     }
+    ]
+   },
+   {
+    "section": "第三方 税务凭证",
+    "slug": "tax-vouchers",
+    "contents": [
+     {
+      "endpoint": "POST /gw/api/v1/tax-vouchers",
+      "slug": "create-tax-voucher-requests"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/tax-vouchers/{requestId}/download",
+      "slug": "download-file"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/tax-vouchers/dividends",
+      "slug": "fetch-dividends-1"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/tax-vouchers/active-countries",
+      "slug": "get-active-country-list"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/tax-vouchers/years",
+      "slug": "get-years"
+     },
+     {
+      "endpoint": "GET /gw/api/v1/tax-vouchers/{requestId}/state",
+      "slug": "get-current-state-1"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "实用工具",
+  "slug": "utilities",
+  "contents": [
+   {
+    "section": "实用工具 Echo",
+    "slug": "echo",
+    "contents": [
+     {
+      "endpoint": "GET /gw/api/v1/echo/https",
+      "slug": "list-echo-https"
+     },
+     {
+      "endpoint": "POST /gw/api/v1/echo/signed-jwt",
+      "slug": "create-echo-signed-jwt"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "section": "WebSocket",
+  "slug": "websocket",
+  "contents": [
+   {
+    "section": "交易 WebSocket",
+    "slug": "websocket",
+    "contents": [
+     {
+      "endpoint": "GET /v1/api/ws",
+      "slug": "open-websocket"
+     }
+    ]
+   }
+  ]
+ }
+]

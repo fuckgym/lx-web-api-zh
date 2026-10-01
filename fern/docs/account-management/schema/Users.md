@@ -10,9 +10,9 @@
 
 | 名称                 | 类型                      | 描述                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| externalIndividualId | String; max 64 characters | 与此用户关联的个人标识符。在 IBKR 数据库中创建关联所必需。该值由对手方指定,且对每个账户必须唯一。如果某个 externalIndividualId 已被使用,您将收到错误。   \*这可以与 [Customer](/web-api/account-management/schema/customer) 节点中指定的 externalId 相同。 |
+| externalIndividualId | String; max 64 characters | 与此用户关联的个人标识符。在 IBKR 数据库中创建关联所必需。该值由对手方指定,且对每个账户必须唯一。如果某个 externalIndividualId 已被使用,您将收到错误。   \*这可以与 [Customer](/account-management/schema/customer) 节点中指定的 externalId 相同。 |
 | externalUserId       | String; max 64 characters | 与此用户关联的个人标识符。在 IBKR 数据库中创建关联所必需。该值由对手方指定,且对每个账户必须唯一。如果某个 externalIndividualId 已被使用,您将收到错误。   \*/web-api/account-management/schema/customer) node。                                                                      |
-| prefix               | 3-6 个小写字母。            | 前缀将在创建用户 ID 时使用。IBKR 会在前缀末尾追加 3-6 位数字。如果前缀包含以下内容,您将收到错误:  • 符号或数字 • 大写字母 • 前缀少于 3 个字母或多于 6 个字母 \*此前缀应与 [Customer](/web-api/account-management/schema/customer) 节点中输入的前缀相同。                       |
+| prefix               | 3-6 个小写字母。            | 前缀将在创建用户 ID 时使用。IBKR 会在前缀末尾追加 3-6 位数字。如果前缀包含以下内容,您将收到错误:  • 符号或数字 • 大写字母 • 前缀少于 3 个字母或多于 6 个字母 \*此前缀应与 [Customer](/account-management/schema/customer) 节点中输入的前缀相同。                       |
 
 ## mdServices
 

@@ -1,6 +1,6 @@
 # 第一步:实例化期权链
 
-首先,用户必须先针对标的代码(symbol)调用 [/iserver/secdef/search endpoint](/web-api/v1/endpoints/contract/search-contract-by-symbol) 端点。每当用户不知道最终衍生品的 conId 时,后续所有步骤都需要执行此操作。
+首先,用户必须先针对标的代码(symbol)调用 [/iserver/secdef/search endpoint](/v1/endpoints/contract/search-contract-by-symbol) 端点。每当用户不知道最终衍生品的 conId 时,后续所有步骤都需要执行此操作。
 
 **即使您已经知道 conId 和到期日,在继续之前也必须始终调用该端点。**
 

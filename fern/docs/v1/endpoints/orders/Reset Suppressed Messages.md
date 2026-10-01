@@ -1,6 +1,6 @@
 # 重置已屏蔽的消息
 
-重置所有由[屏蔽消息端点](/web-api/v1/endpoints/orders/suppress-messages)屏蔽的消息。
+重置所有由[屏蔽消息端点](/v1/endpoints/orders/suppress-messages)屏蔽的消息。
 
 `POST /iserver/questions/suppress/reset`
 

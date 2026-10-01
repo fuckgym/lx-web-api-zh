@@ -2,7 +2,7 @@
 
 对于许多订单，客户会看到订单返回一个订单状态，该状态带有一组可能的取值。下表详细说明了各状态对订单的含义以及可以预期的后续行为。
 
-Live Orders 对象中 "order\_status" 字段返回的值，与使用 [GET /iserver/account/orders](/web-api/v1/endpoints/order-monitoring/live-orders) 的 "filters" 参数时所采用的格式略有不同。
+Live Orders 对象中 "order\_status" 字段返回的值，与使用 [GET /iserver/account/orders](/v1/endpoints/order-monitoring/live-orders) 的 "filters" 参数时所采用的格式略有不同。
 
 ######
 

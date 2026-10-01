@@ -11,4 +11,4 @@ IBKR 设有专门的 API 团队,通过电子邮件提供 24/5 支持,并将在�
 
 ### 资源
 
-为了帮助您更好地理解 API 端点,我们建议安装 [postman](https://www.postman.com/downloads/),并安装我们的 [postman collection](/web-api/account-management/resources/postman) 和环境。
+为了帮助您更好地理解 API 端点,我们建议安装 [postman](https://www.postman.com/downloads/),并安装我们的 [postman collection](/account-management/resources/postman) 和环境。

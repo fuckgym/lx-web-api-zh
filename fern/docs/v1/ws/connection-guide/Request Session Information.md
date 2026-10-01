@@ -1,6 +1,6 @@
 # 请求会话信息
 
-首先请求 [/tickle](/web-api/v1/endpoints/session/ping-the-server) 端点,并保存返回的 session 值。
+首先请求 [/tickle](/v1/endpoints/session/ping-the-server) 端点,并保存返回的 session 值。
 
 ```
 {

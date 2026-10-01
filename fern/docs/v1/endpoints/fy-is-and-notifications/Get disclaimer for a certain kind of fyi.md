@@ -10,7 +10,7 @@
 
 **typecode:** String。必填\
 用于表示特定 FYI 模板类型的代码。\
-更多详情请参阅 [FYI 类型代码](/web-api/v1/endpoints/fy-is-and-notifications/fyi-typecodes)部分。
+更多详情请参阅 [FYI 类型代码](/v1/endpoints/fy-is-and-notifications/fyi-typecodes)部分。
 
 #### Python
 

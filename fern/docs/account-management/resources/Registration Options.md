@@ -123,7 +123,7 @@ IBKR 的 [CRM](https://www.ibkrguides.com/advisorportal/homemenu/addcontact.htm)
 3. IBKR 检索文件并提供响应文件。响应状态为 Success 或 Error。任何错误将由顾问/IBroker 修正后重新提交。
 4. 成功的响应文件将包含 IB 账户号、用户名、临时密码、已成功处理的协议/披露文件的确认，以及审批所需的待处理注册任务（如有）。
    * 如果响应文件中不包含注册任务，该账户将被提交审批。
-   * 如果包含注册任务，则需要完成[注册任务](/web-api/account-management/client-registration/registration-tasks/complete-registration-tasks)，账户才能继续审批流程。
+   * 如果包含注册任务，则需要完成[注册任务](/account-management/client-registration/registration-tasks/complete-registration-tasks)，账户才能继续审批流程。
 5. 顾问/IBroker 负责向其客户提供账户号、用户名和临时密码。
 6. 在账户获得批准并开立后，客户首次登录 IBKR 门户时，将被提示重置密码并设置三个安全问题。
 
@@ -131,7 +131,7 @@ IBKR 的 [CRM](https://www.ibkrguides.com/advisorportal/homemenu/addcontact.htm)
 
 通过 Web API 向 IBKR 提供部分账户数据。客户将通过 IBKR 托管的应用程序（白标）完成剩余的申请步骤。
 
-* 顾问/经纪商可以将客户引导至 IBKR 的登录页面（白标），或创建[单](/web-api/account-management/single-sign-on)[点登录](https://www.ibkrguides.com/dameca/Endpoint/ssoCreate.htm)（single sign on）会话以完成剩余的申请步骤。
+* 顾问/经纪商可以将客户引导至 IBKR 的登录页面（白标），或创建[单](/account-management/single-sign-on)[点登录](https://www.ibkrguides.com/dameca/Endpoint/ssoCreate.htm)（single sign on）会话以完成剩余的申请步骤。
 
 * 面向具备 JSON 和 OAuth 2.0 实用知识的顾问/经纪商。
 
@@ -148,8 +148,8 @@ IBKR 的 [CRM](https://www.ibkrguides.com/advisorportal/homemenu/addcontact.htm)
 1. **在 IBKR 创建账户**
    * 使用 [accounts](https://ibkrcampus.com/docs/web-api/api-reference/account-management/account-management-accounts/create-accounts) 端点向 IBKR 提交部分申请数据。
      * 开立账户至少需要提供姓名（Name）、电子邮件（Email）和居住国家/地区（Country of Residence）。
-     * [必填字段](/web-api/account-management/client-registration/data-for-client-registration)
-   * IBKR 将返回实时的[响应](/web-api/account-management/resources/sample-responses/sample-responses)，其中包含账户凭据和待处理任务。
+     * [必填字段](/account-management/client-registration/data-for-client-registration)
+   * IBKR 将返回实时的[响应](/account-management/resources/sample-responses/introduction)，其中包含账户凭据和待处理任务。
 2. **引导用户前往 IBKR 门户完成剩余的申请步骤。**
    * 创建[单](https://www.interactivebrokers.com/campus/ibkr-api-page/webapi-ref-staging/#tag/Authorization-SSO-Sessions/paths/~1gw~1api~1v1~1sso-sessions/post)[点登录](https://www.ibkrguides.com/dameca/Endpoint/ssoCreate.htm)会话，将用户无缝连接到 IBKR 门户。
    * IBKR 门户可以定制（免费），以体现您的公司品牌，包括[徽标、公司名称](https://ibkrguides.com/brokerportal/whitebranding/whitereg.htm)和[主题文件](https://ibkrguides.com/brokerportal/whitebranding/custom-theme.htm)。这可以直接在 IBKR 门户中进行配置。

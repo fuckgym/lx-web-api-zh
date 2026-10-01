@@ -84,9 +84,9 @@
 | "不支持的值。Property:'knowledgeLevel', value:'NO Knowledge | knowledgeLevel 应填写为 'Limited'、'Good' 或 'Extensive'。 |
 | "不支持的值。Property:'assetClass', value:'opt'," | assetClass 应填写为大写的 'OPT'。 |
 | "缺少账户持有人的 Identification 节点中的签发国家/地区。" | 请在 Identification 节点中填写签发国家/地区(身份证件的签发国家/地区)。 |
-| "缺少账户持有人的有效身份证明。请提供有效的身份证明,例如 SSN、SIN、护照(Passport)、国民身份证(National Card)、外侨卡(Alien Card)、驾照(Driver's License)或纳税人识别号(Tax Id)。" | 请提供有效身份证件。请参阅:[此文档](/web-api/account-management/schema/associated-individual) |
+| "缺少账户持有人的有效身份证明。请提供有效的身份证明,例如 SSN、SIN、护照(Passport)、国民身份证(National Card)、外侨卡(Alien Card)、驾照(Driver's License)或纳税人识别号(Tax Id)。" | 请提供有效身份证件。请参阅:[此文档](/account-management/schema/associatedindividual) |
 | financialInformation 节点中的总资产(Total Assets)值无效。总资产必须为正值。 | 为 `totalAssets` 提供的值无效。 |
-| 发生 accounts 异常:指定了不正确的投资目标。 | 如果 `investmentObjectives` 无效/与可接受的值不匹配,则会抛出此错误。详情请参阅[此处](/web-api/account-management/schema/accounts)。 |
+| 发生 accounts 异常:指定了不正确的投资目标。 | 如果 `investmentObjectives` 无效/与可接受的值不匹配,则会抛出此错误。详情请参阅[此处](/account-management/schema/accounts)。 |
 | 指定的资产类别不正确。 | 如果 `investmentExperience` 内的 `assetClass` 属性无效或缺失,则会抛出以下错误。 |
 | 缺少资产经验。 | 如果 JSON 中缺少 `assetClass`,则会抛出此错误。 |
 | AssetExperience 节点中资产类别 BOND 缺少知识水平。 | 如果 assetExperience 中的 knowledgeLevel 缺失或为空,则会抛出以下错误。 |
@@ -163,7 +163,7 @@
 | 费用详情类型为必填项,且应为可接受值列表中的值。 | 如果 `automatedFeesDetails` 节点中缺少 type 属性,则会抛出此错误。 |
 | 处理顾问打包费用时出错:\{type=required} | 如果 `advisorWrapFees` 节点中的 `automatedFeesDetails` 节点缺失,则会抛出此错误。 |
 | 顾问必须为该账户指定费用方案 | 顾问可通过自动计费、电子发票或直接计费的方式,就所提供的服务向客户收费。您在客户注册时确定顾问费用,并可随时在账户管理(Account Management)中修改这些费用。费用将在 Accounts 节点内通过 [advisorWrapFees](https://www.ibkrguides.com/dameca/Schema/AdvisorWrapFees.htm) 或 [Fees](https://www.ibkrguides.com/dameca/Schema/Fees.htm) 指定。 |
-| 顾问必须为账户指定费用方案。 | 对于顾问客户,需要在 `advisorWrapFees` **或** `feeTemplateName` 中定义费用方案。详情请参阅[此处](/web-api/account-management/schema/accounts)。 |
+| 顾问必须为账户指定费用方案。 | 对于顾问客户,需要在 `advisorWrapFees` **或** `feeTemplateName` 中定义费用方案。详情请参阅[此处](/account-management/schema/accounts)。 |
 |  |  |
 
 ### **users**
@@ -187,9 +187,9 @@
 | 身份证明类型(Form 8001)缺失或不正确 | [Documents](https://www.ibkrguides.com/dameca/Schema/Document.htm) 中的 `proofOfIdentityType` 无效或缺失。数据对空格和大小写敏感。 |
 | 地址证明类型(Form 8002)缺失或不正确 | [Documents](https://www.ibkrguides.com/dameca/Schema/Document.htm) 中的 `proofOfAddressType` 无效或缺失。数据对空格和大小写敏感。 |
 | 签名不被接受。 | [Documents](https://www.ibkrguides.com/dameca/Schema/Document.htm) 中的 `signedBy` 必须与所提交的内容一致:名 中间名首字母(如适用) 姓 姓氏后缀(如适用)。数据对大小写和空格敏感。 |
-| 文件处理 I/O 错误 | 当申请的 `documents` 部分中包含的 `fileName` 未提交至 IBKR 时,会触发此错误。请使用 [DocumentSubmission](/web-api/account-management/client-registration/registration-tasks/complete-registration-tasks) 将表单重新提交至 IBKR。 |
+| 文件处理 I/O 错误 | 当申请的 `documents` 部分中包含的 `fileName` 未提交至 IBKR 时,会触发此错误。请使用 [DocumentSubmission](/account-management/client-registration/registration-tasks/complete-registration-tasks) 将表单重新提交至 IBKR。 |
 | 文件的 SHA-1 校验和与归档原件不同 | 当数据库中存储的 sha1Checksum 与数据库中存储的 sha1Checksum 不同时,会触发此错误。提交过时的文档时会触发此错误。拉取表单的说明请参阅[此处](https://www.interactivebrokers.com/campus/ibkr-api/account-management-api/#download-ibkr-agreements-and-disclosures-65)。重新提交表单的说明请参阅[此处](https://www.interactivebrokers.com/campus/ibkr-api/account-management-api/#complete-registration-tasks-10)。 |
-| 缺少 TaxAuthority AUSTRALIA\_TA 的当地税务表格 缺少 TaxAuthority CANADA\_TA 的当地税务表格 | 当请求加拿大或澳大利亚权限且 [w8Ben](/web-api/account-management/schema/associated-individual#dependent-on-type) 中缺少 [localTaxForms](https://www.ibkrguides.com/dameca/Schema/LocalTaxForms.htm) 时,会触发此错误。 |
+| 缺少 TaxAuthority AUSTRALIA\_TA 的当地税务表格 缺少 TaxAuthority CANADA\_TA 的当地税务表格 | 当请求加拿大或澳大利亚权限且 [w8Ben](/account-management/schema/associatedindividual#dependent-on-type) 中缺少 [localTaxForms](https://www.ibkrguides.com/dameca/Schema/LocalTaxForms.htm) 时,会触发此错误。 |
 | 缺少身份证明文件(Form 8001)的到期日。 | 如果 `proofOfIdentityType` 为 Passport 或 Drivers License,则身份证明文件需要填写到期日。 |
 
 ### 非 200 状态码
