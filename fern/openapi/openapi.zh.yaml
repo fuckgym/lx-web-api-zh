@@ -9850,6 +9850,119 @@ paths:
           description: 成功响应
       security:
       - ssoBearer: []
+  /AccountManagement/FlexWebService/SendRequest:
+    get:
+      operationId: flexWebService_sendRequest
+      summary: 触发报告生成
+      description: 提交一个请求以生成 Flex Query 报告实例。成功时返回一个 ReferenceCode，将其传递给 /GetStatement 即可检索已生成的报告。
+
+        频率限制：每秒 1 个请求；每个令牌每分钟最多 10 个请求。
+      tags:
+      - Flex Web Service
+      servers:
+      - url: https://ndcdyn.interactivebrokers.com
+        description: Flex Web Service
+      parameters:
+      - name: t
+        in: query
+        description: 在 Client Portal 中于 Reporting -> Flex Queries 下为 Flex Web Service 创建的访问令牌。
+        required: true
+        schema:
+          type: string
+      - name: q
+        in: query
+        description: 所需 Flex Query 报告模板的 Query ID，可在 Client Portal 的 Reporting -> Flex Query 下获取。
+        required: true
+        schema:
+          type: string
+      - name: v
+        in: query
+        description: Flex Web Service 的版本。支持 2 和 3 两个值；应始终使用版本 3。
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2'
+          - '3'
+      - name: fd
+        in: query
+        description: fromDate 的缩写。定义要检索的最早日期。如果使用 fd，则 td 参数为必需。
+        required: false
+        schema:
+          type: string
+      - name: td
+        in: query
+        description: toDate 的缩写。定义要检索的最后日期。如果使用 td，则 fd 参数为必需。
+        required: false
+        schema:
+          type: string
+      - name: p
+        in: query
+        description: Period 的缩写。从当前日期起要检索数据的天数。最多可请求 365 天。
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: XML 响应，指示报告生成请求成功还是失败。请检查 Status 元素以确定结果。
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/FlexStatementResponse'
+              examples:
+                成功:
+                  value: '<FlexStatementResponse timestamp="28 August, 2012 10:37 AM EDT"><Status>Success</Status><ReferenceCode>1234567890</ReferenceCode><url>https://gdcdyn.interactivebrokers.com/Universal/servlet/FlexStatementService.GetStatement</url></FlexStatementResponse>'
+                失败:
+                  value: '<FlexStatementResponse timestamp="28 August, 2012 10:37 AM EDT"><Status>Fail</Status><ErrorCode>1012</ErrorCode><ErrorMessage>Token has expired.</ErrorMessage></FlexStatementResponse>'
+  /AccountManagement/FlexWebService/GetStatement:
+    get:
+      operationId: flexWebService_getStatement
+      summary: 获取已生成的报告
+      description: 检索由先前成功调用 /SendRequest 所返回的 ReferenceCode 标识的 Flex Query 报告实例。视报告大小而定，你可能需要等待一段时间后再调用此端点，以使报告生成完成。
+      tags:
+      - Flex Web Service
+      servers:
+      - url: https://ndcdyn.interactivebrokers.com
+        description: Flex Web Service
+      parameters:
+      - name: t
+        in: query
+        description: 在 Client Portal 中于 Reporting -> Flex Queries 下为 Flex Web Service 创建的访问令牌。
+        required: true
+        schema:
+          type: string
+      - name: q
+        in: query
+        description: 由先前成功调用 /SendRequest 返回的 ReferenceCode，用于标识要检索的特定报告实例。
+        required: true
+        schema:
+          type: string
+      - name: v
+        in: query
+        description: Flex Web Service 的版本。支持 2 和 3 两个值；应始终使用版本 3。
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2'
+          - '3'
+      responses:
+        '200':
+          description: 已生成的报告文件。其格式（例如 CSV、XML）取决于 Flex Query 模板的配置。失败时将改为返回 XML 错误响应。
+          content:
+            application/xml:
+              schema:
+                type: string
+                description: 报告文件的原始内容（CSV 或 XML，取决于 Flex Query 模板的配置）。
+              examples:
+                成功:
+                  value: '"ClientAccountID","CurrencyPrimary","Symbol","Conid","Date/Time","Exchange","Buy/Sell","Quantity","Price","OrigTradeID","TraderID","OrderID","OrderReference","IsAPIOrder"
+
+                    "DU5240685","USD","AAPL","265598","20260806;112923","IEX","BUY","80","309.96","","","734329156","","N"
+
+                    "DU5240685","USD","AAPL","265598","20260806;112923","IBDARK","BUY","80","309.94","","","734329156","","N"'
+                失败:
+                  value: '<FlexStatementResponse timestamp="28 August, 2012 10:37 AM EDT"><Status>Fail</Status><ErrorCode>1017</ErrorCode><ErrorMessage>Reference code is invalid.</ErrorMessage></FlexStatementResponse>'
 tags:
 - name: tradingOAuth10A
   x-fern-display-name: OAuth 1.0a 授权
@@ -9905,6 +10018,8 @@ tags:
   x-fern-display-name: 实用工具 Echo
 - name: tradingWebsocket
   x-fern-display-name: 交易 WebSocket
+- name: flexWebService
+  x-fern-display-name: Flex Web Service
 servers:
 - url: https://localhost:5000
   description: Client Portal 网关
@@ -32173,6 +32288,32 @@ components:
       enum:
       - websocket
       title: V1APIWebSocketGet参数升级
+    FlexStatementResponse:
+      type: object
+      description: Flex Web Service 请求返回的 XML 响应（此处以对象形式描述其字段）。
+      properties:
+        timestamp:
+          type: string
+          description: 响应生成的时间戳。
+        Status:
+          type: string
+          enum:
+          - Success
+          - Fail
+          description: 报告生成请求的结果。Success 表示请求已被接受；Fail 表示请求失败，需检查 ErrorCode 与 ErrorMessage。
+        ReferenceCode:
+          type: string
+          description: 报告实例的引用代码，传递给 /GetStatement 以检索已生成的报告。仅在 Status 为 Success 时返回。
+        url:
+          type: string
+          description: 用于检索报告的 GetStatement 服务地址。仅在 Status 为 Success 时返回。
+        ErrorCode:
+          type: string
+          description: 错误代码。仅在 Status 为 Fail 时返回。
+        ErrorMessage:
+          type: string
+          description: 错误原因说明。仅在 Status 为 Fail 时返回。
+      title: FlexStatementResponse
   securitySchemes:
     ssoBearer:
       type: http

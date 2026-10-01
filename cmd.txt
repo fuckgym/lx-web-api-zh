@@ -1,0 +1,1 @@
+检查Flex Web Service的页面，需要和API Reference同级，她下面的两个端点不应该数据APIREFerence 应该属于和其同级的Flex Web Service下

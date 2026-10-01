@@ -970,5 +970,19 @@
     ]
    }
   ]
+ },
+ {
+  "section": "Flex Web Service",
+  "slug": "flex-web-service",
+  "contents": [
+   {
+    "endpoint": "GET /AccountManagement/FlexWebService/SendRequest",
+    "slug": "send-request"
+   },
+   {
+    "endpoint": "GET /AccountManagement/FlexWebService/GetStatement",
+    "slug": "get-statement"
+   }
+  ]
  }
 ]

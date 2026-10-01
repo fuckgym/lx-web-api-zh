@@ -26,7 +26,14 @@ GROUPS = [
     ("第三方", "third-parties", ["第三方 现金余额", "第三方 税务凭证"]),
     ("实用工具", "utilities", ["实用工具 Echo"]),
     ("WebSocket", "websocket", ["交易 WebSocket"]),
+    # flat group: endpoints hang directly off the group section (no tag
+    # subsection). generate-docs-yml.mjs routes this group into the
+    # flex-web-service tab instead of the API Reference tab.
+    ("Flex Web Service", "flex-web-service", ["Flex Web Service"]),
 ]
+
+# groups whose (single) tag's endpoints are emitted directly under the group
+FLAT_GROUPS = {"Flex Web Service"}
 
 # tag name -> subsection slug (clean, no group prefix duplication issues)
 TAG_SLUGS = {
@@ -74,6 +81,20 @@ layout = []
 covered = 0
 unmatched_tags = []
 for group_title, group_slug, tag_names in GROUPS:
+    if group_title in FLAT_GROUPS:
+        ops = ops_by_tag.get(tag_names[0], [])
+        if not ops:
+            unmatched_tags.append(tag_names[0])
+            continue
+        ep_items = []
+        for ref, op, m in ops:
+            oid = op.get("operationId") or ""
+            suffix = oid.split("_", 1)[1] if "_" in oid else oid
+            slug = kebab(suffix) or kebab(oid)
+            ep_items.append({"endpoint": ref, "slug": slug})
+            covered += 1
+        layout.append({"section": group_title, "slug": group_slug, "contents": ep_items})
+        continue
     contents = []
     for tag in tag_names:
         ops = ops_by_tag.get(tag, [])
@@ -105,7 +126,14 @@ stray = set(ops_by_tag) - {t for g in GROUPS for t in g[2]}
 with open(OUT, "w", encoding="utf-8") as f:
     json.dump(layout, f, ensure_ascii=False, indent=1)
 
-total = sum(len(s["contents"]) for g in layout for s in g["contents"])
+def group_endpoint_count(group):
+    first = group["contents"][0] if group["contents"] else {}
+    if "endpoint" in first:  # flat group: endpoints directly under the section
+        return len(group["contents"])
+    return sum(len(s["contents"]) for s in group["contents"])
+
+
+total = sum(group_endpoint_count(g) for g in layout)
 print(f"groups: {len(layout)} | tags: {sum(len(g['contents']) for g in layout)} | endpoints: {total} (spec ops: {covered})")
 if unmatched_tags:
     print("tags without ops:", unmatched_tags)
