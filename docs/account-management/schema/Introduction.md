@@ -1,0 +1,34 @@
+# 简介
+
+尽管注册所需字段会因账户类型、IB 实体（IB entity）和权限等各种因素而有所不同，但 JSON 应始终包含以下内容：
+
+* customer
+* accounts
+* users
+
+本节包含客户注册的对象与属性信息、验证规则以及支持的枚举值。基于账户类型的客户申请必填字段列表可在[此处](/web-api/account-management/client-registration/data-for-client-registration)找到。
+
+### 枚举（Enumerations）
+
+`/api/v1/enumerations/{enumerationType}` 可用于获取所选属性和对象支持的枚举值。
+
+#### 支持的类型
+
+| 类型                      | 说明                                                                                                                                                                                                                                                                                                                                   | 查询过滤器（可选）       |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| `acats`                   | 查询 brokerId 和 brokerName 的最新值。在通过美国 ACATS extPositionsTransfers 注资时使用。                                                                                                                                                                                                                                              |                          |
+| `aton`                    | 查询 brokerId 和 brokerName 的最新值。在通过 ATON Canada extPositionsTransfers 注资时使用。                                                                                                                                                                                                                                            |                          |
+| `business-and-occupation` | employmentDetails 所需的 occupation 和 employerBusiness 列表。                                                                                                                                                                                                                                                                         |                          |
+| `complex-asset-transfer`  | 查询 brokerName 的最新值。在提交 ComplexAssetTransfer（Basic FOP）时使用                                                                                                                                                                                                                                                               |                          |
+| `countries`               | 可接受的国家代码列表。包含来自 ISO-3166 数据库（[https://opendatacommons.org/licenses/by/1-0/](https://opendatacommons.org/licenses/by/1-0/)）的信息，该信息依据 ODC Attribution License 提供。                                                                                                                                        |                          |
+| `employee-plans`          | 查看与主账户（master account）关联的 EPA（仅在提供 SEP IRA 账户时适用）。                                                                                                                                                                                                                                                              |                          |
+| `employee-track`          | 查询账户最新的 companyId。用于 affiliationDetails，即判断公司是否已有 IBKR Employee Track 账户。                                                                                                                                                                                                                                       |                          |
+| `exchange-bundles`        | 查询 TradingPermissions 所需的 exchangeGroup 的最新列表。                                                                                                                                                                                                                                                                              |                          |
+| `fin-info-ranges`         | 按币种查询 annualNetIncome、netWorth、liquidNetWorth 的最新范围 ID。                                                                                                                                                                                                                                                                   | currency  ibEntity       |
+| `market-data`             | 查看市场数据订阅列表。                                                                                                                                                                                                                                                                                                                 |                          |
+| `product-country-bundles` | 查询 TradingPermissions 所需的产品组合（国家与产品）的最新列表。                                                                                                                                                                                                                                                                       |                          |
+| `prohibited-country`      | 查看受限国家列表。如果除 Citizenship（国籍）或 Country of Birth（出生国）之外的任何字段填入了受限国家，将触发错误。居住在受限国家、在受限国家受雇、在受限国家拥有税务居民身份或在受限国家持有电话号码的申请人，将被限制在 IBKR 开户。                                                                                                  |                          |
+| `questionnaires`          | 查询与分配给账户的 EDD（Enhanced Due Diligence，强化尽职调查）或 AVT（Additional Verification，额外验证）任务相关的问题。                                                                                                                                                                                                              | form-number              |
+| `quiz-questions`          | 获取与 IBKR 知识测评相关的问题列表。                                                                                                                                                                                                                                                                                                   | form-number              |
+| `security-questions`      | 获取 IBKR 安全问题所支持的问题列表。                                                                                                                                                                                                                                                                                                   |                          |
+| `states`                  | 可接受的州和省代码列表。包含来自 ISO-3166 数据库（[https://opendatacommons.org/licenses/by/1-0/](https://opendatacommons.org/licenses/by/1-0/)）的信息，该信息依据 ODC Attribution License 提供。                                                                                                                                      |                          |

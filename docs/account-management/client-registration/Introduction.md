@@ -1,0 +1,27 @@
+# 简介
+
+[accounts](https://ibkrcampus.com/docs/web-api/api-reference/account-management/account-management-accounts/create-accounts) 端点可用于通过 API 在 IBKR 开立经纪账户。对于通过 API 进行的客户注册,我们提供**两种**选项:
+
+* **Full Integration(完全集成)**:托管机构通过 API 提供**所有**开立 IBKR 经纪账户所需的数据和表格。
+
+* **Hybrid(混合)**:通过 API 向 IBKR 提交部分申请数据以创建账户。用户将通过 IBKR 白标(White Branded)应用程序输入其余申请数据。该应用程序会预先填入通过 API 传递的数据。
+  * 使用[单点登录(Single Sign On)](https://ibkrcampus.com/docs/web-api/api-reference/authentication/oauth-2-0/create-sso-sessions)将用户连接到 IBKR 白标注册流程。或者,向用户提供登录 URL 以访问 IBKR Portal。用户访问 IBKR Portal 后,将被提示完成注册流程。
+
+*IBKR 的可用注册选项(包括 IBKR 托管解决方案)可在[此处](/web-api/account-management/resources/registration-options)找到。*
+
+### Full Integration 与 Hybrid 的对比
+
+在开始技术集成之前,先确定您的团队将使用哪种客户注册选项非常重要。如果您刚刚起步,或开发团队资源有限,我们建议先使用 Hybrid 选项,并在后续阶段(如有需要)过渡到 Full Integration。
+
+*下表列出了客户注册中 Full Integration 与 Hybrid 之间的差异。*
+
+| 类型                     | Full Integration                                                                                                                                                                                                                                               | Hybrid                                                                                                                                                                                                                |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 托管机构                 | 交易对手方(Counterparty)                                                                                                                                                                                                                                      | 交易对手方与 IBKR                                                                                                                                                                                                      |
+| 开发工作                 | 是                                                                                                                                                                                                                                                              | 极少                                                                                                                                                                                                                   |
+| 适用资格                 | 适用于注册投资顾问(Registered Advisors)和介绍经纪商(Introducing Brokers),且需获得 IBKR 管理层批准                                                                                                                                                             | 适用于注册投资顾问和介绍经纪商。                                                                                                                                                                                       |
+| 定制化                   | 是——设计由托管机构管理。                                                                                                                                                                                                                                        | 部分——IBKR 平台将体现您的品牌(公司名称、徽标和配色方案)。                                                                                                                                                             |
+| 费用                     | 是,托管机构需支付一次性费用和年费。定价模型会考虑集成的复杂程度和所需服务的范围。                                                                                                                                                                              | 是,托管机构\[交易对手方]需支付一次性费用和年费。定价模型会考虑集成的复杂程度和所需服务的范围。                                                                                                                        |
+| 支持的平台               | 由托管机构决定。                                                                                                                                                                                                                                                | 桌面设备或移动设备上的浏览器                                                                                                                                                                                           |
+| 支持的客户类型           | 个人 联名 退休账户(美国和加拿大)  ISA(英国) JISA(英国) SMSF(澳大利亚)                                                                                                                                                                                       | 个人 联名 退休账户(美国和加拿大)  ISA(英国) JISA(英国) SMSF(澳大利亚)  组织(公司、LLC、合伙企业)  信托                                                                                                              |
+| 最低数据要求             | 所有申请数据,包括文档(协议、披露文件以及已填写的税务表格)(如适用)。根据账户类型和客户类型所需的数据可参阅[此处](/web-api/account-management/client-registration/data-for-client-registration)的表格。                                                       | **Fully-Disclosed(全披露)和 Advisor(顾问)客户:**IBKR 开立账户最低要求提供姓名、电子邮箱和居住国家。**Non-Disclosed(非披露):**需要所有申请数据,已填写的税务表格除外。                                                |
