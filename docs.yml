@@ -5,7 +5,7 @@
 title: IBKR Web API 文档
 
 instances:
-  - url: "ibkr-web-api-docs.docs.buildwithfern.com"
+  - url: "web-api-zh.docs.buildwithfern.com"
 
 navigation:
   - tab: Introduction
